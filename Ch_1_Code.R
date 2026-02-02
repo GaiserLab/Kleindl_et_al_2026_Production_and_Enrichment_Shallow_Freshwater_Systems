@@ -36,7 +36,7 @@ lit_rev_phyto <- read_csv("D:\\Extra FIU Files\\Dissertation\\Chapter 1\\Data Pu
 
 #Macrophyte biomass among freshwater benthic ecosystem types####
 
-#Subset dataset to contain only variables needed
+#Subset dataset to contain only needed variables 
 lit_rev_macro_bio <- lit_rev_macro %>%
   select(publication_citation, habitat_type, category, group, dm_gm2, log_dm_gm2) %>%
   filter(dm_gm2 != -9999, log_dm_gm2 != -9999)
@@ -138,7 +138,7 @@ lit_rev_macro_bio %>%
 #20 Everglades_other                  120
 #21 karstic_wetland                     8
 
-#Mean phytoplankton biomass per freshwater benthic ecosystem type
+#Mean macrophyte biomass per freshwater benthic ecosystem category
 mean_macro_habitat_bio_cat <- lit_rev_macro_bio %>%
   group_by(category) %>%
   dplyr::summarize(mean_biomass = mean(dm_gm2)) %>%
@@ -149,7 +149,7 @@ mean_macro_habitat_bio_cat <- lit_rev_macro_bio %>%
 #3 wetland                      1130.
 #4 karstic_wetland               460.
 
-#Standard error benthic algal biomass per freshwater benthic ecosystem type
+#Standard error macrophyte biomass per freshwater benthic ecosystem category
 se_macro_habitat_bio_cat <- lit_rev_macro_bio %>%
   group_by(category) %>%
   dplyr::summarize(se_biomass = se(dm_gm2)) %>%
@@ -171,7 +171,7 @@ lit_rev_macro_bio %>%
 #3 wetland                 893
 #4 karstic_wetland         170
 
-#Count number of publications per freshwater benthic ecosystem category
+#Count number of publications containing macrophyte biomass per freshwater benthic ecosystem category
 lit_rev_macro_bio %>%
   group_by(category) %>%
   summarise(Unique_Elements = n_distinct(publication_citation))
@@ -181,13 +181,13 @@ lit_rev_macro_bio %>%
 #3 wetland                           128
 #4 karstic_wetland                     9
 
-#Count total number of values
+#Count total number of macrophyte biomass values
 lit_rev_macro_bio %>%
   tally()
 
 #1517
 
-#Count total number of publications
+#Count total number of publications containing macrophyte biomass
 lit_rev_macro_bio %>%
   summarise(Unique_Elements = n_distinct(publication_citation))
 
@@ -232,13 +232,13 @@ Benthic Ecosystem Types") +
         axis.title = element_text(size = 16),
         legend.position = "none")
 
-#One-way Kruskal Wallis test
+#One-way Kruskal Wallis test - macrophyte biomass
 kruskal.test(dm_gm2 ~ category, data = lit_rev_macro_bio)
 
 #data:  dm_gm2 by category
 #Kruskal-Wallis chi-squared = 314.94, df = 3, p-value < 2.2e-16
 
-#Post-hoc test - Dunn's Test
+#Post-hoc test: Dunn's Test - macrophyte biomass
 dunnTest(as.numeric(dm_gm2) ~ category,
          data=lit_rev_macro_bio,
          method="bonferroni")
@@ -251,7 +251,7 @@ dunnTest(as.numeric(dm_gm2) ~ category,
 #5               lake_littoral_zone - wetland -17.5446089 6.540143e-69 3.924086e-68
 #6            shallow_lake_and_pond - wetland  -0.6726945 5.011417e-01 1.000000e+00
 
-#Log macrophyte biomass among freshwater benthic ecosystem types and categories
+#Log-transformed macrophyte biomass among freshwater benthic ecosystem types and categories
 ggplot(lit_rev_macro_bio, aes(x = as.factor(category), y = as.numeric(log_dm_gm2), fill = as.factor(habitat_type))) +
   geom_boxplot(width = 1, position = position_dodge2(preserve = "single")) +
   theme_classic(base_size = 15) +
@@ -290,13 +290,13 @@ Benthic Ecosystem Types") +
         axis.title = element_text(size = 16),
         legend.position = "none")
 
-#One-way Kruskal Wallis test
+#One-way Kruskal Wallis test - log-transformed macrophyte biomass
 kruskal.test(log_dm_gm2 ~ category, data = lit_rev_macro_bio)
 
 #data:  log_dm_gm2 by category
 #Kruskal-Wallis chi-squared = 314.96, df = 3, p-value < 2.2e-16
 
-#Post-hoc test - Dunn's Test
+#Post-hoc test: Dunn's Test - log-transformed macrophyte biomass
 dunnTest(as.numeric(log_dm_gm2) ~ category,
          data=lit_rev_macro_bio,
          method="bonferroni")
@@ -311,7 +311,7 @@ dunnTest(as.numeric(log_dm_gm2) ~ category,
 
 #Macrophyte total phosphorus stock among freshwater benthic ecosystem types####
 
-#Subset dataset to contain only variables needed
+#Subset dataset to contain only needed variables 
 lit_rev_macro_tp <- lit_rev_macro %>%
   select(publication_citation, habitat_type, category, group, tp_stock_gm2, log_tp_stock_gm2) %>%
   filter(tp_stock_gm2 != -9999, log_tp_stock_gm2 != -9999)
@@ -368,7 +368,7 @@ se_macro_habitat_tp <- lit_rev_macro_tp %>%
 #12 Everglades                        0.0833
 #13 karstic_wetland                  NA  
 
-#Count number of macrophyte biomass values per freshwater benthic ecosystem type
+#Count number of macrophyte total phosphorus stock values per freshwater benthic ecosystem type
 lit_rev_macro_tp %>%
   group_by(habitat_type) %>%
   tally() %>%
@@ -388,7 +388,7 @@ lit_rev_macro_tp %>%
 #12 Everglades                       36
 #13 karstic_wetland                   1
 
-#Mean phytoplankton biomass per freshwater benthic ecosystem type
+#Mean macrophyte total phosphorus stock per freshwater benthic ecosystem category
 mean_macro_habitat_tp_cat <- lit_rev_macro_tp %>%
   group_by(category) %>%
   dplyr::summarize(mean_biomass = mean(tp_stock_gm2)) %>%
@@ -399,7 +399,7 @@ mean_macro_habitat_tp_cat <- lit_rev_macro_tp %>%
 #3 wetland                      3.93 
 #4 karstic_wetland              0.242
 
-#Standard error benthic algal biomass per freshwater benthic ecosystem type
+#Standard error macrophyte total phosphorus stock per freshwater benthic ecosystem category
 se_macro_habitat_tp_cat <- lit_rev_macro_tp %>%
   group_by(category) %>%
   dplyr::summarize(se_biomass = se(tp_stock_gm2)) %>%
@@ -422,7 +422,7 @@ lit_rev_macro_tp %>%
 #3 wetland                 359
 #4 karstic_wetland          37
 
-#Count number of publications per freshwater benthic ecosystem category
+#Count number of publications containing macrophyte total phosphorus stock per freshwater benthic ecosystem category
 lit_rev_macro_tp %>%
   group_by(category) %>%
   summarise(Unique_Elements = n_distinct(publication_citation))
@@ -432,13 +432,13 @@ lit_rev_macro_tp %>%
 #3 wetland                            55
 #4 karstic_wetland                     2
 
-#Count total number of values
+#Count total number of macrophyte total phosphorus stock values
 lit_rev_macro_tp %>%
   tally()
 
 #487
 
-#Count total number of publications
+#Count total number of publications containing macrophyte total phosphorus stock
 lit_rev_macro_tp %>%
   summarise(Unique_Elements = n_distinct(publication_citation))
 
@@ -476,13 +476,13 @@ Benthic Ecosystem Types") +
         axis.title = element_text(size = 16),
         legend.position = "none")
 
-#One-way Kruskal Wallis test
+#One-way Kruskal Wallis test - macrophyte total phosphorus stock
 kruskal.test(tp_stock_gm2 ~ category, data = lit_rev_macro_tp)
 
 #data:  tp_stock_gm2 by category
 #Kruskal-Wallis chi-squared = 157.68, df = 3, p-value < 2.2e-16
 
-#Post-hoc test - Dunn's Test
+#Post-hoc test: Dunn's Test - macrophyte total phosphorus stock
 dunnTest(as.numeric(tp_stock_gm2) ~ category,
          data=lit_rev_macro_tp,
          method="bonferroni")
@@ -495,7 +495,7 @@ dunnTest(as.numeric(tp_stock_gm2) ~ category,
 #5               lake_littoral_zone - wetland   8.007972 1.166151e-15 6.996908e-15
 #6            shallow_lake_and_pond - wetland  -5.585189 2.334462e-08 1.400677e-07
 
-#Log macrophyte total phosphorus stock among freshwater benthic ecosystem types and categories
+#Log-transformed macrophyte total phosphorus stock among freshwater benthic ecosystem types and categories
 ggplot(lit_rev_macro_tp, aes(x = as.factor(category), y = as.numeric(log_tp_stock_gm2), fill = as.factor(habitat_type))) +
   geom_boxplot(width = 1, position = position_dodge2(preserve = "single")) +
   theme_classic(base_size = 15) +
@@ -527,13 +527,13 @@ Benthic Ecosystem Types") +
         axis.title = element_text(size = 16),
         legend.position = "none")
 
-#One-way Kruskal Wallis test
+#One-way Kruskal Wallis test -log-transformed macrophyte total phosphorus stock
 kruskal.test(log_tp_stock_gm2 ~ category, data = lit_rev_macro_tp)
 
 #data:  log_tp_stock_gm2 by category
 #Kruskal-Wallis chi-squared = 149.06, df = 3, p-value < 2.2e-16
 
-#Post-hoc test - Dunn's Test
+#Post-hoc test: Dunn's Test - log-transformed macrophyte total phosphorus stock
 dunnTest(as.numeric(log_tp_stock_gm2) ~ category,
          data=lit_rev_macro_tp,
          method="bonferroni")
@@ -548,7 +548,7 @@ dunnTest(as.numeric(log_tp_stock_gm2) ~ category,
 
 #Benthic algal biomass among freshwater benthic ecosystem types####
 
-#Subset dataset to contain only variables needed
+#Subset dataset to contain only needed variables 
 lit_rev_micro_bio <- lit_rev_micro %>%
   select(publication_citation, habitat_type, category, group, chla_gm3, log_chla_gm3) %>%
   filter(chla_gm3 != -9999, log_chla_gm3 != -9999)
@@ -648,7 +648,7 @@ lit_rev_micro_bio %>%
 #19 Everglades_other                    6
 #20 karstic_wetland                     5
 
-#Mean phytoplankton biomass per freshwater benthic ecosystem type
+#Mean benthic algal biomass per freshwater benthic ecosystem category
 mean_micro_habitat_bio_cat <- lit_rev_micro_bio %>%
   group_by(category) %>%
   dplyr::summarize(mean_biomass = mean(chla_gm3)) %>%
@@ -659,7 +659,7 @@ mean_micro_habitat_bio_cat <- lit_rev_micro_bio %>%
 #3 wetland                      2.12 
 #4 karstic_wetland              0.274
 
-#Standard error benthic algal biomass per freshwater benthic ecosystem type
+#Standard error benthic algal biomass per freshwater benthic ecosystem category
 se_micro_habitat_bio_cat <- lit_rev_micro_bio %>%
   group_by(category) %>%
   dplyr::summarize(se_biomass = se(chla_gm3)) %>%
