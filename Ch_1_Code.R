@@ -42,13 +42,13 @@ lit_rev_macro_bio <- lit_rev_macro %>%
   filter(dm_gm2 != -9999, log_dm_gm2 != -9999)
 
 #Order and make each freshwater benthic ecosystem type and category a factor
-lit_rev_macro_bio$habitat_type = factor(lit_rev_macro_bio$habitat_type, levels = c("eutrophic_lake_littoral_zone","lake_littoral_zone", 
+lit_rev_macro_bio$habitat_type = factor(lit_rev_macro_bio$habitat_type, levels = c("eutrophic_lake_littoral_zone", "lake_littoral_zone", 
                                                                                    "mesotrophic_lake_littoral_zone", "oligotrophic_lake_littoral_zone",
                                                                                    "pond", "shallow_lake", "shallow_reservoir", "bog", 
                                                                                    "constructed_treatment_wetland", "dune_slack", "fen", 
                                                                                    "floodplain_wetland", "marsh", "non_tidal_coastal_wetland",
                                                                                    "prairie_marsh", "swamp", "tidal_marsh", "wet_meadow", 
-                                                                                   "wetland",  "Everglades", "Everglades_other","karstic_wetland"))
+                                                                                   "wetland",  "Everglades", "Everglades_other", "karstic_wetland"))
 
 lit_rev_macro_bio$category = factor(
   lit_rev_macro_bio$category,
@@ -240,8 +240,8 @@ kruskal.test(dm_gm2 ~ category, data = lit_rev_macro_bio)
 
 #Post-hoc test: Dunn's Test - macrophyte biomass
 dunnTest(as.numeric(dm_gm2) ~ category,
-         data=lit_rev_macro_bio,
-         method="bonferroni")
+         data = lit_rev_macro_bio,
+         method = "bonferroni")
 
 #                                  Comparison           Z       P.unadj       P.adj
 #1       karstic_wetland - lake_littoral_zone   9.8250047 8.786993e-23 5.272196e-22
@@ -275,7 +275,7 @@ ggplot(lit_rev_macro_bio, aes(x = as.factor(category), y = as.numeric(log_dm_gm2
                                "constructed_treatment_wetland", "dune_slack", "fen", 
                                "floodplain_wetland", "marsh", "non_tidal_coastal_wetland",
                                "prairie_marsh", "swamp", "tidal_marsh", "wet_meadow", 
-                               "wetland",  "Everglades", "Everglades_other","karstic_wetland")) +
+                               "wetland",  "Everglades", "Everglades_other", "karstic_wetland")) +
   scale_x_discrete(
     drop = FALSE,
     name = 'Categories',
@@ -298,8 +298,8 @@ kruskal.test(log_dm_gm2 ~ category, data = lit_rev_macro_bio)
 
 #Post-hoc test: Dunn's Test - log-transformed macrophyte biomass
 dunnTest(as.numeric(log_dm_gm2) ~ category,
-         data=lit_rev_macro_bio,
-         method="bonferroni")
+         data = lit_rev_macro_bio,
+         method = "bonferroni")
 
 #                                   Comparison          Z       P.unadj       P.adj
 #1       karstic_wetland - lake_littoral_zone   9.8281541 8.516541e-23 5.109925e-22
@@ -322,7 +322,7 @@ lit_rev_macro_tp$habitat_type = factor(lit_rev_macro_tp$habitat_type, levels = c
                                                                                  "constructed_treatment_wetland", "fen", 
                                                                                  "floodplain_wetland", "marsh", "non_tidal_coastal_wetland",
                                                                                  "tidal_marsh", "wetland", "Everglades", 
-                                                                                 "Everglades_other","karstic_wetland"))
+                                                                                 "Everglades_other", "karstic_wetland"))
 
 lit_rev_macro_tp$category = factor(
   lit_rev_macro_tp$category,
@@ -461,7 +461,7 @@ ggplot(lit_rev_macro_tp, aes(x = as.factor(category), y = as.numeric(tp_stock_gm
                     breaks = c("lake_littoral_zone", "pond", "shallow_lake", "bog", 
                                "constructed_treatment_wetland", "fen", 
                                "floodplain_wetland", "marsh", "non_tidal_coastal_wetland",
-                               "tidal_marsh", "wetland",  "Everglades", "Everglades_other","karstic_wetland")) +
+                               "tidal_marsh", "wetland",  "Everglades", "Everglades_other", "karstic_wetland")) +
   scale_x_discrete(
     drop = FALSE,
     name = 'Categories',
@@ -484,8 +484,8 @@ kruskal.test(tp_stock_gm2 ~ category, data = lit_rev_macro_tp)
 
 #Post-hoc test: Dunn's Test - macrophyte total phosphorus stock
 dunnTest(as.numeric(tp_stock_gm2) ~ category,
-         data=lit_rev_macro_tp,
-         method="bonferroni")
+         data = lit_rev_macro_tp,
+         method = "bonferroni")
 
 #                                  Comparison          Z      P.unadj         P.adj
 #1       karstic_wetland - lake_littoral_zone -11.025928 2.865462e-28 1.719277e-27
@@ -535,8 +535,8 @@ kruskal.test(log_tp_stock_gm2 ~ category, data = lit_rev_macro_tp)
 
 #Post-hoc test: Dunn's Test - log-transformed macrophyte total phosphorus stock
 dunnTest(as.numeric(log_tp_stock_gm2) ~ category,
-         data=lit_rev_macro_tp,
-         method="bonferroni")
+         data = lit_rev_macro_tp,
+         method = "bonferroni")
 
 #                                  Comparison          Z      P.unadj         P.adj
 #1       karstic_wetland - lake_littoral_zone -11.031342 2.698072e-28 1.618843e-27
@@ -554,14 +554,14 @@ lit_rev_micro_bio <- lit_rev_micro %>%
   filter(chla_gm3 != -9999, log_chla_gm3 != -9999)
 
 #Order and make each freshwater benthic ecosystem type and category a factor
-lit_rev_micro_bio$habitat_type = factor(lit_rev_micro_bio$habitat_type, levels = c("eutrophic_lake_littoral_zone","lake_littoral_zone", 
+lit_rev_micro_bio$habitat_type = factor(lit_rev_micro_bio$habitat_type, levels = c("eutrophic_lake_littoral_zone", "lake_littoral_zone", 
                                                                                    "mesotrophic_lake_littoral_zone", "oligotrophic_lake_littoral_zone",
                                                                                    "reservoir_littoral_zone", "pond", "shallow_lagoon", 
                                                                                    "shallow_lake", "shallow_reservoir",
                                                                                    "constructed_treatment_wetland", "fen", 
                                                                                    "floodplain_wetland", "marsh", "non_tidal_coastal_wetland",
                                                                                    "prairie_marsh", "swamp",
-                                                                                   "wetland",  "Everglades", "Everglades_other","karstic_wetland"))
+                                                                                   "wetland", "Everglades", "Everglades_other", "karstic_wetland"))
 
 lit_rev_micro_bio$category = factor(
   lit_rev_micro_bio$category,
@@ -748,8 +748,8 @@ kruskal.test(chla_gm3 ~ category, data = lit_rev_micro_bio)
 
 #Post-hoc test: Dunn's Test - benthic algal biomass
 dunnTest(as.numeric(chla_gm3) ~ category,
-         data=lit_rev_micro_bio,
-         method="bonferroni")
+         data = lit_rev_micro_bio,
+         method = "bonferroni")
 
 #                                  Comparison          Z      P.unadj       P.adj
 #1       karstic_wetland - lake_littoral_zone  0.5316123 0.594994575 1.000000000
@@ -804,8 +804,8 @@ kruskal.test(log_chla_gm3 ~ category, data = lit_rev_micro_bio)
 
 #Post-hoc test: Dunn's Test - log-transformed benthic algal biomass
 dunnTest(as.numeric(log_chla_gm3) ~ category,
-         data=lit_rev_micro_bio,
-         method="bonferroni")
+         data = lit_rev_micro_bio,
+         method = "bonferroni")
 
 #                                  Comparison          Z      P.unadj        P.adj
 #1       karstic_wetland - lake_littoral_zone  0.5818344 0.5606782425 1.000000000
@@ -826,10 +826,10 @@ lit_rev_micro_tp <- lit_rev_micro %>%
 unique(lit_rev_micro_tp$habitat_type)
 
 #Order and make each freshwater benthic ecosystem type and category a factor
-lit_rev_micro_tp$habitat_type = factor(lit_rev_micro_tp$habitat_type, levels = c("eutrophic_lake_littoral_zone","lake_littoral_zone", 
+lit_rev_micro_tp$habitat_type = factor(lit_rev_micro_tp$habitat_type, levels = c("eutrophic_lake_littoral_zone", "lake_littoral_zone", 
                                                                                  "mesotrophic_lake_littoral_zone", "oligotrophic_lake_littoral_zone",
                                                                                  "shallow_lake", "constructed_treatment_wetland", 
-                                                                                 "prairie_marsh", "Everglades", "Everglades_other","karstic_wetland"))
+                                                                                 "prairie_marsh", "Everglades", "Everglades_other", "karstic_wetland"))
 
 lit_rev_micro_tp$category = factor(
   lit_rev_micro_tp$category,
@@ -981,8 +981,8 @@ kruskal.test(tp_stock_gm2 ~ category, data = lit_rev_micro_tp)
 
 #Post-hoc test: Dunn's Test - benthic microbial total phosphorus stock
 dunnTest(as.numeric(tp_stock_gm2) ~ category,
-         data=lit_rev_micro_tp,
-         method="bonferroni")
+         data = lit_rev_micro_tp,
+         method = "bonferroni")
 
 #                                  Comparison          Z      P.unadj         P.adj
 #1       karstic_wetland - lake_littoral_zone -5.5422814 2.985560e-08 1.791336e-07
@@ -1032,8 +1032,8 @@ kruskal.test(log_tp_stock_gm2 ~ category, data = lit_rev_micro_tp)
 
 #Post-hoc test: Dunn's Test - log-transformed benthic microbial total phosphorus stock
 dunnTest(as.numeric(log_tp_stock_gm2) ~ category,
-         data=lit_rev_micro_tp,
-         method="bonferroni")
+         data = lit_rev_micro_tp,
+         method = "bonferroni")
 
 #                                  Comparison          Z      P.unadj         P.adj
 #1       karstic_wetland - lake_littoral_zone -5.5365351 3.085141e-08 1.851085e-07
@@ -1051,7 +1051,7 @@ lit_rev_phyto_bio <- lit_rev_phyto %>%
   filter(chla_ugl != -9999, log_chla_ugl != -9999)
 
 #Order and make each freshwater benthic ecosystem type and category a factor
-lit_rev_phyto_bio$habitat_type = factor(lit_rev_phyto_bio$habitat_type, levels = c("eutrophic_lake_littoral_zone","lake_littoral_zone", 
+lit_rev_phyto_bio$habitat_type = factor(lit_rev_phyto_bio$habitat_type, levels = c("eutrophic_lake_littoral_zone", "lake_littoral_zone", 
                                                                                    "mesotrophic_lake_littoral_zone", "oligotrophic_lake_littoral_zone",
                                                                                    "shallow_lake", "shallow_reservoir",
                                                                                    "constructed_treatment_wetland", "non_tidal_coastal_wetland",
@@ -1212,8 +1212,8 @@ kruskal.test(chla_ugl ~ category, data = lit_rev_phyto_bio)
 
 #Post-hoc test: Dunn's Test - phytoplankton biomass
 dunnTest(as.numeric(chla_ugl) ~ category,
-         data=lit_rev_phyto_bio,
-         method="bonferroni")
+         data = lit_rev_phyto_bio,
+         method = "bonferroni")
 
 #                                  Comparison          Z      P.unadj         P.adj
 #1 lake_littoral_zone - shallow_lake_and_pond -4.6741824 2.951269e-06 8.853808e-06
@@ -1242,7 +1242,7 @@ ggplot(lit_rev_phyto_bio, aes(x = as.factor(category), y = as.numeric(log_chla_u
   scale_x_discrete(
     drop = FALSE,
     name = 'Categories',
-    labels = c('Littoral Zone', 'Shallow Lake and Pond','Wetland', 'Karstic Wetland')) +
+    labels = c('Littoral Zone', 'Shallow Lake and Pond', 'Wetland', 'Karstic Wetland')) +
   labs(fill = "Freshwater
 Benthic Ecosystem Types") +
   ylab(expression(paste("Log Phytoplankton Biomass (Chl-a   ",µg," ",L^-1,")", sep = ""))) +
@@ -1261,8 +1261,8 @@ kruskal.test(log_chla_ugl ~ category, data = lit_rev_phyto_bio)
 
 #Post-hoc test: Dunn's Test - log-transformed phytoplankton biomass
 dunnTest(as.numeric(log_chla_ugl) ~ category,
-         data=lit_rev_phyto_bio,
-         method="bonferroni")
+         data = lit_rev_phyto_bio,
+         method = "bonferroni")
 
 #                                   Comparison         Z       P.unadj        P.adj
 #1 lake_littoral_zone - shallow_lake_and_pond -4.6741824 2.951269e-06 8.853808e-06
@@ -1288,14 +1288,14 @@ lit_rev_phyto_micro_tp_wc$total_p_ugl <- as.numeric(lit_rev_phyto_micro_tp_wc$to
 
 #Order and make each freshwater benthic ecosystem type and category a factor
 lit_rev_phyto_micro_tp_wc$habitat_type = factor(lit_rev_phyto_micro_tp_wc$habitat_type, 
-                                                levels = c("eutrophic_lake_littoral_zone","lake_littoral_zone", 
+                                                levels = c("eutrophic_lake_littoral_zone", "lake_littoral_zone", 
                                                            "mesotrophic_lake_littoral_zone", "oligotrophic_lake_littoral_zone",
                                                            "reservoir_littoral_zone", "pond", "shallow_lagoon",
                                                            "shallow_lake", "shallow_reservoir",
                                                            "constructed_treatment_wetland", "fen", 
                                                            "floodplain_wetland", "marsh", "non_tidal_coastal_wetland",
                                                            "prairie_marsh", "swamp", "wet_meadow", 
-                                                           "wetland",  "Everglades", "Everglades_other","karstic_wetland"))
+                                                           "wetland",  "Everglades", "Everglades_other", "karstic_wetland"))
 
 lit_rev_phyto_micro_tp_wc$category = factor(
   lit_rev_phyto_micro_tp_wc$category,
@@ -1463,7 +1463,7 @@ ggplot(lit_rev_phyto_micro_tp_wc, aes(x = as.factor(category), y = as.numeric(to
                                "constructed_treatment_wetland", "fen", 
                                "floodplain_wetland", "marsh", "non_tidal_coastal_wetland",
                                "prairie_marsh", "swamp", "wet_meadow", 
-                               "wetland", "Everglades", "Everglades_other","karstic_wetland")) +
+                               "wetland", "Everglades", "Everglades_other", "karstic_wetland")) +
   scale_x_discrete(
     drop = FALSE,
     name = 'Categories',
@@ -1486,8 +1486,8 @@ kruskal.test(total_p_ugl ~ category, data = lit_rev_phyto_micro_tp_wc)
 
 #Post-hoc test: Dunn's Test - water column total phosphorus
 dunnTest(as.numeric(total_p_ugl) ~ category,
-         data=lit_rev_phyto_micro_tp_wc,
-         method="bonferroni")
+         data = lit_rev_phyto_micro_tp_wc,
+         method = "bonferroni")
 
 #                                  Comparison          Z      P.unadj         P.adj
 #1       karstic_wetland - lake_littoral_zone  -3.670876 2.417202e-04 1.450321e-03
@@ -1516,14 +1516,14 @@ ggplot(lit_rev_phyto_micro_tp_wc, aes(x = as.factor(category), y = as.numeric(lo
                                "Prairie Marsh", "Swamp",
                                "Wet Meadow", "Wetland", "Everglades - This Study", 
                                "Everglades - Other Studies", "Karstic Wetland"),
-                    breaks = c("eutrophic_lake_littoral_zone","lake_littoral_zone", 
+                    breaks = c("eutrophic_lake_littoral_zone", "lake_littoral_zone", 
                                "mesotrophic_lake_littoral_zone", "oligotrophic_lake_littoral_zone",
                                "reservoir_littoral_zone", "pond", "shallow_lagoon",
                                "shallow_lake", "shallow_reservoir",
                                "constructed_treatment_wetland", "fen", 
                                "floodplain_wetland", "marsh", "non_tidal_coastal_wetland",
                                "prairie_marsh", "swamp", "wet_meadow", 
-                               "wetland", "Everglades", "Everglades_other","karstic_wetland")) +
+                               "wetland", "Everglades", "Everglades_other", "karstic_wetland")) +
   scale_x_discrete(
     drop = FALSE,
     name = 'Categories',
@@ -1546,8 +1546,8 @@ kruskal.test(log_total_p_ugl ~ category, data = lit_rev_phyto_micro_tp_wc)
 
 #Post-hoc test: Dunn's Test - log-transformed water column total phosphorus
 dunnTest(as.numeric(log_total_p_ugl) ~ category,
-         data=lit_rev_phyto_micro_tp_wc,
-         method="bonferroni")
+         data = lit_rev_phyto_micro_tp_wc,
+         method = "bonferroni")
 
 #                                  Comparison          Z       P.unadj        P.adj
 #1       karstic_wetland - lake_littoral_zone  -3.665657 2.467044e-04 1.480226e-03
@@ -1579,14 +1579,14 @@ lit_rev_all_bio$log_biomass <- as.numeric(lit_rev_all_bio$log_biomass)
 unique(lit_rev_all_bio$habitat_type)
 
 #Order and make each freshwater benthic ecosystem type and category a factor
-lit_rev_all_bio$habitat_type = factor(lit_rev_all_bio$habitat_type, levels = c("eutrophic_lake_littoral_zone","lake_littoral_zone", 
+lit_rev_all_bio$habitat_type = factor(lit_rev_all_bio$habitat_type, levels = c("eutrophic_lake_littoral_zone", "lake_littoral_zone", 
                                                                                "mesotrophic_lake_littoral_zone", "oligotrophic_lake_littoral_zone",
                                                                                "reservoir_littoral_zone", "pond", "shallow_lagoon",
                                                                                "shallow_lake", "shallow_reservoir", "bog", 
                                                                                "constructed_treatment_wetland", "dune_slack", "fen", 
                                                                                "floodplain_wetland", "marsh", "non_tidal_coastal_wetland",
                                                                                "prairie_marsh", "swamp", "tidal_marsh", "wet_meadow", 
-                                                                               "wetland",  "Everglades", "Everglades_other","karstic_wetland"))
+                                                                               "wetland",  "Everglades", "Everglades_other", "karstic_wetland"))
 
 lit_rev_all_bio$category = factor(
   lit_rev_all_bio$category,
@@ -1619,7 +1619,7 @@ ggplot(lit_rev_all_bio, aes(x = as.factor(category), y = as.numeric(biomass), fi
                                "constructed_treatment_wetland", "dune_slack", "fen", 
                                "floodplain_wetland", "marsh", "non_tidal_coastal_wetland",
                                "prairie_marsh", "swamp", "tidal_marsh", "wet_meadow", 
-                               "wetland",  "Everglades", "Everglades_other","karstic_wetland")) +
+                               "wetland",  "Everglades", "Everglades_other", "karstic_wetland")) +
   scale_x_discrete(
     drop = FALSE,
     name = 'Categories',
@@ -1645,14 +1645,14 @@ lit_rev_micro_bio_vs_tp <- lit_rev_micro %>%
 
 #Order and make each freshwater benthic ecosystem type and category a factor
 lit_rev_micro_bio_vs_tp$habitat_type = factor(lit_rev_micro_bio_vs_tp$habitat_type,
-                                              levels = c("eutrophic_lake_littoral_zone","lake_littoral_zone", 
+                                              levels = c("eutrophic_lake_littoral_zone", "lake_littoral_zone", 
                                                          "mesotrophic_lake_littoral_zone", "oligotrophic_lake_littoral_zone",
                                                          "reservoir_littoral_zone", "pond", "shallow_lagoon", 
                                                          "shallow_lake", "shallow_reservoir",
                                                          "constructed_treatment_wetland", "fen", 
                                                          "floodplain_wetland", "marsh", "non_tidal_coastal_wetland",
                                                          "prairie_marsh", "swamp",
-                                                         "wetland",  "Everglades", "Everglades_other","karstic_wetland"))
+                                                         "wetland",  "Everglades", "Everglades_other", "karstic_wetland"))
 
 lit_rev_micro_bio_vs_tp$category = factor(
   lit_rev_micro_bio_vs_tp$category,
