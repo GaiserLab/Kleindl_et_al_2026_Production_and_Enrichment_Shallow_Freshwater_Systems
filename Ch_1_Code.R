@@ -243,7 +243,7 @@ dunnTest(as.numeric(dm_gm2) ~ category,
          data=lit_rev_macro_bio,
          method="bonferroni")
 
-#Comparison          Z    P.unadj      P.adj
+#                                  Comparison           Z       P.unadj       P.adj
 #1       karstic_wetland - lake_littoral_zone   9.8250047 8.786993e-23 5.272196e-22
 #2    karstic_wetland - shallow_lake_and_pond  -0.7972558 4.253025e-01 1.000000e+00
 #3 lake_littoral_zone - shallow_lake_and_pond  -8.6358856 5.827382e-18 3.496429e-17
@@ -301,7 +301,7 @@ dunnTest(as.numeric(log_dm_gm2) ~ category,
          data=lit_rev_macro_bio,
          method="bonferroni")
 
-#Comparison          Z    P.unadj      P.adj
+#                                   Comparison          Z       P.unadj       P.adj
 #1       karstic_wetland - lake_littoral_zone   9.8281541 8.516541e-23 5.109925e-22
 #2    karstic_wetland - shallow_lake_and_pond  -0.7946693 4.268059e-01 1.000000e+00
 #3 lake_littoral_zone - shallow_lake_and_pond  -8.6355067 5.846728e-18 3.508037e-17
@@ -487,7 +487,7 @@ dunnTest(as.numeric(tp_stock_gm2) ~ category,
          data=lit_rev_macro_tp,
          method="bonferroni")
 
-#Comparison          Z    P.unadj      P.adj
+#                                  Comparison          Z      P.unadj         P.adj
 #1       karstic_wetland - lake_littoral_zone -11.025928 2.865462e-28 1.719277e-27
 #2    karstic_wetland - shallow_lake_and_pond  -1.340805 1.799839e-01 1.000000e+00
 #3 lake_littoral_zone - shallow_lake_and_pond  10.193698 2.115609e-24 1.269365e-23
@@ -538,7 +538,7 @@ dunnTest(as.numeric(log_tp_stock_gm2) ~ category,
          data=lit_rev_macro_tp,
          method="bonferroni")
 
-#Comparison          Z    P.unadj      P.adj
+#                                  Comparison          Z      P.unadj         P.adj
 #1       karstic_wetland - lake_littoral_zone -11.031342 2.698072e-28 1.618843e-27
 #2    karstic_wetland - shallow_lake_and_pond  -1.896990 5.782929e-02 3.469758e-01
 #3 lake_littoral_zone - shallow_lake_and_pond   9.610714 7.204757e-22 4.322854e-21
@@ -751,7 +751,7 @@ dunnTest(as.numeric(chla_gm3) ~ category,
          data=lit_rev_micro_bio,
          method="bonferroni")
 
-#Comparison          Z    P.unadj      P.adj
+#                                  Comparison          Z      P.unadj       P.adj
 #1       karstic_wetland - lake_littoral_zone  0.5316123 0.594994575 1.000000000
 #2    karstic_wetland - shallow_lake_and_pond -1.0635642 0.287526149 1.000000000
 #3 lake_littoral_zone - shallow_lake_and_pond -2.1866613 0.028767257 0.172603541
@@ -807,7 +807,7 @@ dunnTest(as.numeric(log_chla_gm3) ~ category,
          data=lit_rev_micro_bio,
          method="bonferroni")
 
-#Comparison          Z    P.unadj      P.adj
+#                                  Comparison          Z      P.unadj        P.adj
 #1       karstic_wetland - lake_littoral_zone  0.5818344 0.5606782425 1.000000000
 #2    karstic_wetland - shallow_lake_and_pond -1.1039761 0.2696035112 1.000000000
 #3 lake_littoral_zone - shallow_lake_and_pond -2.3056679 0.0211291973 0.126775184
@@ -984,7 +984,7 @@ dunnTest(as.numeric(tp_stock_gm2) ~ category,
          data=lit_rev_micro_tp,
          method="bonferroni")
 
-#Comparison          Z    P.unadj      P.adj
+#                                  Comparison          Z      P.unadj         P.adj
 #1       karstic_wetland - lake_littoral_zone -5.5422814 2.985560e-08 1.791336e-07
 #2    karstic_wetland - shallow_lake_and_pond -2.4912397 1.272982e-02 7.637893e-02
 #3 lake_littoral_zone - shallow_lake_and_pond  0.2770007 7.817796e-01 1.000000e+00
@@ -1035,7 +1035,7 @@ dunnTest(as.numeric(log_tp_stock_gm2) ~ category,
          data=lit_rev_micro_tp,
          method="bonferroni")
 
-#Comparison          Z    P.unadj      P.adj
+#                                  Comparison          Z      P.unadj         P.adj
 #1       karstic_wetland - lake_littoral_zone -5.5365351 3.085141e-08 1.851085e-07
 #2    karstic_wetland - shallow_lake_and_pond -2.4936162 1.264492e-02 7.586951e-02
 #3 lake_littoral_zone - shallow_lake_and_pond  0.2718989 7.856997e-01 1.000000e+00
@@ -1215,7 +1215,7 @@ dunnTest(as.numeric(chla_ugl) ~ category,
          data=lit_rev_phyto_bio,
          method="bonferroni")
 
-#Comparison          Z    P.unadj      P.adj
+#                                  Comparison          Z      P.unadj         P.adj
 #1 lake_littoral_zone - shallow_lake_and_pond -4.6741824 2.951269e-06 8.853808e-06
 #2               lake_littoral_zone - wetland -4.3647277 1.272812e-05 3.818437e-05
 #3            shallow_lake_and_pond - wetland  0.5331289 5.939443e-01 1.000000e+00
@@ -1264,7 +1264,7 @@ dunnTest(as.numeric(log_chla_ugl) ~ category,
          data=lit_rev_phyto_bio,
          method="bonferroni")
 
-#Comparison          Z    P.unadj      P.adj
+#                                   Comparison         Z       P.unadj        P.adj
 #1 lake_littoral_zone - shallow_lake_and_pond -4.6741824 2.951269e-06 8.853808e-06
 #2               lake_littoral_zone - wetland -4.3647277 1.272812e-05 3.818437e-05
 #3            shallow_lake_and_pond - wetland  0.5331289 5.939443e-01 1.000000e+00
@@ -1489,7 +1489,7 @@ dunnTest(as.numeric(total_p_ugl) ~ category,
          data=lit_rev_phyto_micro_tp_wc,
          method="bonferroni")
 
-#Comparison          Z    P.unadj      P.adj
+#                                  Comparison          Z      P.unadj         P.adj
 #1       karstic_wetland - lake_littoral_zone  -3.670876 2.417202e-04 1.450321e-03
 #2    karstic_wetland - shallow_lake_and_pond  -9.784292 1.315128e-22 7.890767e-22
 #3 lake_littoral_zone - shallow_lake_and_pond -11.619926 3.264201e-31 1.958520e-30
@@ -1549,7 +1549,7 @@ dunnTest(as.numeric(log_total_p_ugl) ~ category,
          data=lit_rev_phyto_micro_tp_wc,
          method="bonferroni")
 
-#Comparison          Z    P.unadj      P.adj
+#                                  Comparison          Z       P.unadj        P.adj
 #1       karstic_wetland - lake_littoral_zone  -3.665657 2.467044e-04 1.480226e-03
 #2    karstic_wetland - shallow_lake_and_pond  -9.779636 1.377044e-22 8.262267e-22
 #3 lake_littoral_zone - shallow_lake_and_pond -11.620134 3.256237e-31 1.953742e-30
@@ -1748,11 +1748,11 @@ coef(other_micro_tp_lm)
 summary(other_micro_tp_lm)
 
 #Residuals:
-#Min      1Q  Median      3Q     Max 
+#     Min      1Q  Median      3Q     Max 
 #-3.0363 -0.5500  0.0574  0.5590  3.2503 
 
 #Coefficients:
-#Estimate Std. Error t value Pr(>|t|)    
+#                 Estimate Std. Error t value Pr(>|t|)    
 #(Intercept)      -1.4697     0.1922  -7.648 1.14e-12 ***
 #log_total_p_ugl   0.2175     0.1109   1.962   0.0513 .  
 #---
@@ -1779,11 +1779,11 @@ coef(wet_micro_tp_lm)
 summary(wet_micro_tp_lm)
 
 #Residuals:
-#Min       1Q   Median       3Q      Max 
+#    Min      1Q   Median     3Q     Max 
 #-3.3284 -0.3043 -0.0673  0.3705  1.5789 
 
 #Coefficients:
-#Estimate Std. Error t value Pr(>|t|)    
+#                 Estimate Std. Error t value Pr(>|t|)    
 #(Intercept)     -0.27191    0.14522  -1.872 0.065007 .  
 #log_total_p_ugl -0.26266    0.07072  -3.714 0.000387 ***
 #---
@@ -1895,7 +1895,7 @@ coef(other_phyto_tp_lm)
 summary(other_phyto_tp_lm)
 
 #Residuals:
-#Min      1Q  Median      3Q     Max 
+#    Min      1Q  Median      3Q     Max 
 #-1.2468 -0.4199 -0.0030  0.3188  3.3189 
 
 #Coefficients:
@@ -1926,11 +1926,11 @@ coef(wet_phyto_tp_lm)
 summary(wet_phyto_tp_lm)
 
 #Residuals:
-#Min       1Q   Median       3Q      Max 
+#     Min       1Q   Median       3Q      Max 
 #-1.71895 -0.41795  0.04203  0.37136  1.65088 
 
 #Coefficients:
-#Estimate Std. Error t value Pr(>|t|)    
+#                 Estimate Std. Error t value Pr(>|t|)    
 #(Intercept)      0.02672    0.20973   0.127    0.899    
 #log_total_p_ugl  0.49857    0.09567   5.212 9.95e-07 ***
 #---
@@ -2128,11 +2128,11 @@ coef(other_micro_tp_stock_lm)
 summary(other_micro_tp_stock_lm)
 
 #Residuals:
-#Min      1Q  Median      3Q     Max 
+#    Min      1Q  Median      3Q     Max 
 #-1.2630 -0.4593 -0.2104  0.2434  2.1479 
 
 #Coefficients:
-#Estimate Std. Error t value Pr(>|t|)    
+#                  Estimate Std. Error t value Pr(>|t|)    
 #(Intercept)      -0.44599    0.15843  -2.815  0.00937 ** 
 #log_tp_stock_gm3  0.41225    0.07998   5.154  2.5e-05 ***
 #---
@@ -2159,11 +2159,11 @@ coef(wet_micro_tp_stock_lm)
 summary(wet_micro_tp_stock_lm)
 
 #Residuals:
-#Min       1Q   Median       3Q      Max 
+#     Min       1Q   Median       3Q      Max 
 #-2.46961 -0.31079 -0.08056  0.37380  2.75375 
 
 #Coefficients:
-#Estimate Std. Error t value Pr(>|t|)   
+#                  Estimate Std. Error t value Pr(>|t|)   
 #(Intercept)       -0.4704     0.2636  -1.784  0.08043 . 
 #log_tp_stock_gm3   0.4601     0.1429   3.219  0.00226 **
 #---
@@ -2281,11 +2281,11 @@ coef(other_macro_tp_stock_lm)
 summary(other_macro_tp_stock_lm)
 
 #Residuals:
-#Min      1Q  Median      3Q     Max 
+#     Min       1Q    Median      3Q      Max 
 #-1.04750 -0.07447  0.08870  0.12749  0.86822 
 
 #Coefficients:
-#Estimate Std. Error t value Pr(>|t|)    
+#                  Estimate Std. Error t value Pr(>|t|)    
 #(Intercept)        2.7802     0.1166  23.837 4.11e-12 ***
 #log_tp_stock_gm2   0.2469     0.1245   1.983   0.0689 .  
 #---
@@ -2312,11 +2312,11 @@ coef(wet_macro_tp_stock_lm)
 summary(wet_macro_tp_stock_lm)
 
 #Residuals:
-#Min       1Q   Median       3Q      Max 
+#     Min       1Q   Median       3Q      Max 
 #-2.60848 -0.21576  0.02279  0.29886  0.82462 
 
 #Coefficients:
-#Estimate Std. Error t value Pr(>|t|)    
+#                  Estimate Std. Error t value Pr(>|t|)    
 #(Intercept)       2.85691    0.02611  109.42   <2e-16 ***
 #log_tp_stock_gm2  0.48636    0.03383   14.38   <2e-16 ***
 #---
@@ -2474,13 +2474,13 @@ micro_bio_vs_tp_conc_gam <- gam(micro_chla_gm2 ~ s(micro_tp_conc_ugg), method = 
 summary(micro_bio_vs_tp_conc_gam)
 
 #Parametric coefficients:
-#Estimate Std. Error t value Pr(>|t|)    
+#             Estimate Std. Error t value Pr(>|t|)    
 #(Intercept) 0.020048   0.002088   9.602 1.38e-11 ***
 #---
 #Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 #Approximate significance of smooth terms:
-#edf Ref.df     F p-value   
+#                       edf Ref.df     F p-value   
 #s(micro_tp_conc_ugg) 4.034  4.898 4.154 0.00514 **
 #---
 #Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
@@ -2513,13 +2513,13 @@ micro_bio_gm3_vs_tp_stock_gam <- gam(micro_chla_gm3 ~ s(micro_tp_stock_gm3), met
 summary(micro_bio_gm3_vs_tp_stock_gam)
 
 #Parametric coefficients:
-#Estimate Std. Error t value Pr(>|t|)    
+#             Estimate Std. Error t value Pr(>|t|)    
 #(Intercept)  0.10131    0.01671   6.064 7.98e-07 ***
 #---
 #Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 #Approximate significance of smooth terms:
-#edf Ref.df     F p-value    
+#                       edf Ref.df     F p-value    
 #s(micro_tp_stock_gm3)   1      1 48.32  <2e-16 ***
 #---
 #Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
@@ -2601,13 +2601,13 @@ macro_bio_vs_tp_conc_gam <- gam(total_macro_dm_gm2 ~ s(total_macro_tp_conc_ugg),
 summary(macro_bio_vs_tp_conc_gam)
 
 #Parametric coefficients:
-#Estimate Std. Error t value Pr(>|t|)    
+#             Estimate Std. Error t value Pr(>|t|)    
 #(Intercept)   500.67      45.83   10.92 1.61e-12 ***
 #---
 #Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 #Approximate significance of smooth terms:
-#edf Ref.df    F p-value
+#                              edf Ref.df    F p-value
 #s(total_macro_tp_conc_ugg) 1.866    2.3 0.84   0.396
 
 #R-sq.(adj) =  0.0367   Deviance explained =  8.8%
@@ -2643,13 +2643,13 @@ macro_bio_gm2_vs_tp_stock_gm2_gam <- gam(total_macro_dm_gm2 ~ s(total_macro_tp_s
 summary(macro_bio_gm2_vs_tp_stock_gm2_gam)
 
 #Parametric coefficients:
-#Estimate Std. Error t value Pr(>|t|)    
+#             Estimate Std. Error t value Pr(>|t|)    
 #(Intercept)   490.27      35.67   13.74 4.68e-15 ***
 #---
 #Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 #Approximate significance of smooth terms:
-#edf Ref.df     F  p-value    
+#                               edf Ref.df     F  p-value    
 #s(total_macro_tp_stock_gm2) 1.654  2.026 12.61 8.83e-05 ***
 #---
 #Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
@@ -2686,13 +2686,13 @@ prod_bio_vs_tp_conc_gam <- gam(total_prod_bio_gm2 ~ s(total_prod_tp_conc_ugg), m
 summary(prod_bio_vs_tp_conc_gam)
 
 #Parametric coefficients:
-#Estimate Std. Error t value Pr(>|t|)    
+#             Estimate Std. Error t value Pr(>|t|)    
 #(Intercept)   500.69      45.91   10.91 1.67e-12 ***
 #---
 #Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 #Approximate significance of smooth terms:
-#edf Ref.df     F p-value
+#                             edf Ref.df     F p-value
 #s(total_prod_tp_conc_ugg) 1.859  2.292 0.763   0.422
 
 #R-sq.(adj) =  0.0335   Deviance explained = 8.48%
@@ -2727,20 +2727,19 @@ prod_bio_gm3_vs_tp_stock_gam <- gam(total_prod_bio_gm3 ~ s(total_prod_tp_stock_g
 summary(prod_bio_gm3_vs_tp_stock_gam)
 
 #Parametric coefficients:
-#Estimate Std. Error t value Pr(>|t|)    
+#             Estimate Std. Error t value Pr(>|t|)    
 #(Intercept)   1735.7      130.7   13.28  8.6e-15 ***
 #---
 #Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 #Approximate significance of smooth terms:
-#edf Ref.df     F p-value    
+#                            edf Ref.df     F p-value    
 #s(total_prod_tp_stock_gm3)   1      1 72.56  <2e-16 ***
 #---
 #Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 #R-sq.(adj) =  0.678   Deviance explained = 68.7%
 #GCV = 6.3405e+05  Scale est. = 5.9782e+05  n = 35
-
 
 #Clajam and elecel biomass vs. clajam and elecel total phosphorus concentration####
 
@@ -2800,13 +2799,13 @@ clajam_bio_vs_tp_conc_gam <- gam(biomass ~ s(tp_conc), method = "REML", data = e
 summary(clajam_bio_vs_tp_conc_gam)
 
 #Parametric coefficients:
-#Estimate Std. Error t value Pr(>|t|)    
+#             Estimate Std. Error t value Pr(>|t|)    
 #(Intercept)   390.97      48.74   8.022 5.79e-09 ***
 #---
 #Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 #Approximate significance of smooth terms:
-#edf Ref.df     F p-value  
+#             edf Ref.df     F p-value  
 #s(tp_conc) 1.905  2.373 4.792  0.0139 *
 #---
 #Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
@@ -2819,40 +2818,17 @@ elecel_bio_vs_tp_conc_gam <- gam(biomass ~ s(tp_conc), method = "REML", data = e
 summary(elecel_bio_vs_tp_conc_gam)
 
 #Parametric coefficients:
-#Estimate Std. Error t value Pr(>|t|)    
+#             Estimate Std. Error t value Pr(>|t|)    
 #(Intercept)    86.02      15.36   5.601 6.09e-06 ***
 #---
 #Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 #Approximate significance of smooth terms:
-#edf Ref.df     F p-value
+#            edf Ref.df     F p-value
 #s(tp_conc)   1      1 0.413   0.526
 
 #R-sq.(adj) =  -0.0214   Deviance explained = 1.51%
 #-REML = 160.89  Scale est. = 6839      n = 29
-
-#Clajam and elecel biomass stock vs. clajam and elecel total phosphorus stock####
-
-#Macrophyte biomass vs. macrophyte total phosphorus stock per macrophyte species
-macro_stacked_bio_stock_vs_tp_stock <- 
-  ggplot(ever_macro_stacked, aes(y = biomass_stock, x = tp_stock_gm3, color = macro_type, shape = slough_plot_type)) +
-  geom_point(size = 5) +
-  geom_smooth(aes(tp_stock_gm3, biomass_stock, group = macro_type), method = "gam",  se = FALSE) +
-  scale_color_manual(values = c( "cadetblue2", "deepskyblue1"), 
-                     labels = c( "Cladium 
-jamaicense", "Eleocharis 
-cellulosa")) +
-  scale_shape_manual(values = c(19, 21, 17, 24), labels = c("SRS Ridge", "SRS Slough", "TS Ridge", "TS Slough")) +
-  ylab(expression(paste("Macrophyte Biomass (", g, " ", m^-3, ")", sep = ""))) +
-  labs(color = "Macrophyte Type", shape = "Wetland Habitat") +
-  xlab(expression(paste("Macrophyte TP Stock (", g, " ", m^-3, ")", sep = ""))) +
-  theme_classic() +
-  theme(axis.text = element_text(size = 16),
-        axis.title = element_text(size = 18),
-        legend.text = element_text(size = 16),
-        legend.title = element_text(size = 18))
-
-macro_stacked_bio_stock_vs_tp_stock
 
 #Clajam and elecel biomass stock vs. clajam and elecel total phosphorus stock####
 
@@ -2882,13 +2858,13 @@ clajam_bio_vs_tp_stock_gam <- gam(biomass ~ s(tp_stock), method = "REML", data =
 summary(clajam_bio_vs_tp_stock_gam)
 
 #Parametric coefficients:
-#Estimate Std. Error t value Pr(>|t|)    
+#             Estimate Std. Error t value Pr(>|t|)    
 #(Intercept)   390.97      16.79   23.28   <2e-16 ***
 #---
 #Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 #Approximate significance of smooth terms:
-#edf Ref.df    F p-value    
+#              edf Ref.df    F p-value    
 #s(tp_stock) 3.22  3.886 83.6  <2e-16 ***
 #---
 #Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
@@ -2901,13 +2877,13 @@ elecel_bio_vs_tp_stock_gam <- gam(biomass ~ s(tp_stock), method = "REML", data =
 summary(elecel_bio_vs_tp_stock_gam)
 
 #Parametric coefficients:
-#Estimate Std. Error t value Pr(>|t|)    
+#            Estimate Std. Error t value Pr(>|t|)    
 #(Intercept)   86.015      5.181    16.6 1.15e-14 ***
 #---
 #Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 #Approximate significance of smooth terms:
-#edf Ref.df     F p-value    
+#               edf Ref.df     F p-value    
 #s(tp_stock) 3.986  4.711 45.36  <2e-16 ***
 #---
 #Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
@@ -2916,7 +2892,7 @@ summary(elecel_bio_vs_tp_stock_gam)
 #-REML = 135.65  Scale est. = 778.34    n = 29
 
 
-#Lgend containing all relevant producer types####
+#Create legend containing all relevant producer types for above scatterplots####
 
 #Subset dataset to contain only needed variables 
 ever_clajam_bio <- ever %>%
