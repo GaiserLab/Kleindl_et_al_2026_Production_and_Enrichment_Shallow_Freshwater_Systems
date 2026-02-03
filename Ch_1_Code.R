@@ -816,7 +816,7 @@ dunnTest(as.numeric(log_chla_gm3) ~ category,
 #6            shallow_lake_and_pond - wetland -0.6798072 0.4966265210 1.000000000
 
 
-#Benthic algal total phosphorus stock among freshwater benthic ecosystem types####
+#Benthic microbial total phosphorus stock among freshwater benthic ecosystem types####
 
 #Subset dataset to contain only needed variables 
 lit_rev_micro_tp <- lit_rev_micro %>%
@@ -835,7 +835,7 @@ lit_rev_micro_tp$category = factor(
   lit_rev_micro_tp$category,
   levels = c("lake_littoral_zone", "shallow_lake_and_pond", "wetland", "karstic_wetland"))
 
-#Mean benthic algal total phosphorus stock per freshwater benthic ecosystem type
+#Mean benthic microbial total phosphorus stock per freshwater benthic ecosystem type
 mean_micro_habitat_tp <- lit_rev_micro_tp %>%
   group_by(habitat_type) %>%
   dplyr::summarize(mean_tp_stock = mean(tp_stock_gm2)) %>%
@@ -852,7 +852,7 @@ mean_micro_habitat_tp <- lit_rev_micro_tp %>%
 #9 Everglades_other                      0.0974 
 #10 karstic_wetland                       0.0126 
 
-#Standard error benthic algal total phosphorus stock per freshwater benthic ecosystem type
+#Standard error benthic microbial total phosphorus stock per freshwater benthic ecosystem type
 se_micro_habitat_tp <- lit_rev_micro_tp %>%
   group_by(habitat_type) %>%
   dplyr::summarize(se_tp_stock = se(tp_stock_gm2)) %>%
@@ -869,7 +869,7 @@ se_micro_habitat_tp <- lit_rev_micro_tp %>%
 #9 Everglades_other                   0.0243  
 #10 karstic_wetland                    0.00468 
 
-#Count number of benthic algal total phosphorus stock values per freshwater benthic ecosystem type
+#Count number of benthic microbial total phosphorus stock values per freshwater benthic ecosystem type
 lit_rev_micro_tp %>%
   group_by(habitat_type) %>%
   tally() %>%
@@ -886,7 +886,7 @@ lit_rev_micro_tp %>%
 #9 Everglades_other                   96
 #10 karstic_wetland                     5
 
-#Mean benthic algal total phosphorus stock per freshwater benthic ecosystem category
+#Mean benthic microbial total phosphorus stock per freshwater benthic ecosystem category
 mean_micro_habitat_stock_cat <- lit_rev_micro_tp %>%
   group_by(category) %>%
   dplyr::summarize(mean_biomass = mean(tp_stock_gm2)) %>%
@@ -897,7 +897,7 @@ mean_micro_habitat_stock_cat <- lit_rev_micro_tp %>%
 #3 wetland                     0.58  
 #4 karstic_wetland             0.0677
 
-#Standard error benthic algal total phosphorus stock per freshwater benthic ecosystem category
+#Standard error benthic microbial total phosphorus stock per freshwater benthic ecosystem category
 se_micro_habitat_stock_cat <- lit_rev_micro_tp %>%
   group_by(category) %>%
   dplyr::summarize(se_biomass = se(tp_stock_gm2)) %>%
@@ -908,7 +908,7 @@ se_micro_habitat_stock_cat <- lit_rev_micro_tp %>%
 #3 wetland                   0.27  
 #4 karstic_wetland           0.0167
 
-#Count number of benthic algal total phosphorus stock values per freshwater benthic ecosystem category
+#Count number of benthic microbial total phosphorus stock values per freshwater benthic ecosystem category
 lit_rev_micro_tp %>%
   group_by(category) %>%
   tally() %>%
@@ -919,7 +919,7 @@ lit_rev_micro_tp %>%
 #3 wetland                   2
 #4 karstic_wetland         143
 
-#Count number of publications with benthic algal total phosphorus stock per freshwater benthic ecosystem category
+#Count number of publications with benthic microbial total phosphorus stock per freshwater benthic ecosystem category
 lit_rev_micro_tp %>%
   group_by(category) %>%
   summarise(Unique_Elements = n_distinct(publication_citation))
@@ -929,19 +929,19 @@ lit_rev_micro_tp %>%
 #3 wetland                             2
 #4 karstic_wetland                    12
 
-#Count total number of benthic algal total phosphorus stock values
+#Count total number of benthic microbial total phosphorus stock values
 lit_rev_micro_tp %>%
   tally()
 
 #247
 
-#Count total number of publications containing benthic algal total phosphorus stock
+#Count total number of publications containing benthic microbial total phosphorus stock
 lit_rev_micro_tp %>%
   summarise(Unique_Elements = n_distinct(publication_citation))
 
 #27
 
-#Benthic algal total phosphorus stock among freshwater benthic ecosystem types and categories
+#Benthic microbial total phosphorus stock among freshwater benthic ecosystem types and categories
 ggplot(lit_rev_micro_tp, aes(x = as.factor(category), y = as.numeric(tp_stock_gm2), fill = as.factor(habitat_type))) +
   geom_boxplot(width = 1, position = position_dodge2(preserve = "single")) +
   theme_classic(base_size = 15) +
@@ -965,7 +965,7 @@ ggplot(lit_rev_micro_tp, aes(x = as.factor(category), y = as.numeric(tp_stock_gm
     labels = c('Littoral Zone', 'Shallow Lake and Pond', 'Wetland', 'Karstic Wetland')) +
   labs(fill = "Freshwater
 Benthic Ecosystem Types") +
-  ylab(expression(paste("Benthic Algal TP Stock ( ",g," ",m^-2,")", sep = ""))) +
+  ylab(expression(paste("Benthic Microbial TP Stock ( ",g," ",m^-2,")", sep = ""))) +
   xlab(expression(paste("Categories", sep = ""))) +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3, color = "grey60", 
                position = position_dodge2(width = 1, preserve = "single")) +
@@ -973,13 +973,13 @@ Benthic Ecosystem Types") +
         axis.title = element_text(size = 16),
         legend.position = "none")
 
-#One-way Kruskal Wallis test - benthic algal total phosphorus stock
+#One-way Kruskal Wallis test - benthic microbial total phosphorus stock
 kruskal.test(tp_stock_gm2 ~ category, data = lit_rev_micro_tp)
 
 #data:  tp_stock_gm2 by category
 #Kruskal-Wallis chi-squared = 36.607, df = 3, p-value = 5.571e-08
 
-#Post-hoc test: Dunn's Test - benthic algal total phosphorus stock
+#Post-hoc test: Dunn's Test - benthic microbial total phosphorus stock
 dunnTest(as.numeric(tp_stock_gm2) ~ category,
          data=lit_rev_micro_tp,
          method="bonferroni")
@@ -992,7 +992,7 @@ dunnTest(as.numeric(tp_stock_gm2) ~ category,
 #5               lake_littoral_zone - wetland -1.2973901 1.944970e-01 1.000000e+00
 #6            shallow_lake_and_pond - wetland -1.3354896 1.817162e-01 1.000000e+00
 
-#Log-transformed benthic algal total phosphorus stock among freshwater benthic ecosystem types and categories
+#Log-transformed benthic microbial total phosphorus stock among freshwater benthic ecosystem types and categories
 ggplot(lit_rev_micro_tp, aes(x = as.factor(category), y = as.numeric(log_tp_stock_gm2), fill = as.factor(habitat_type))) +
   geom_boxplot(width = 1, position = position_dodge2(preserve = "single")) +
   theme_classic(base_size = 15) +
@@ -1016,7 +1016,7 @@ ggplot(lit_rev_micro_tp, aes(x = as.factor(category), y = as.numeric(log_tp_stoc
     labels = c('Littoral Zone', 'Shallow Lake and Pond', 'Wetland', 'Karstic Wetland')) +
   labs(fill = "Freshwater
 Benthic Ecosystem Types") +
-  ylab(expression(paste("Log Benthic Algal TP Stock ( ",g," ",m^-2,")", sep = ""))) +
+  ylab(expression(paste("Log Benthic Microbial TP Stock ( ",g," ",m^-2,")", sep = ""))) +
   xlab(expression(paste("Categories", sep = ""))) +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3, color = "grey60", 
                position = position_dodge2(width = 1, preserve = "single")) +
@@ -1024,13 +1024,13 @@ Benthic Ecosystem Types") +
         axis.title = element_text(size = 16),
         legend.position = "none")
 
-#One-way Kruskal Wallis test - log-transformed benthic algal total phosphorus stock
+#One-way Kruskal Wallis test - log-transformed benthic microbial total phosphorus stock
 kruskal.test(log_tp_stock_gm2 ~ category, data = lit_rev_micro_tp)
 
 #data:  log_tp_stock_gm2 by category
 #Kruskal-Wallis chi-squared = 36.553, df = 3, p-value = 5.72e-08
 
-#Post-hoc test: Dunn's Test - log-transformed benthic algal total phosphorus stock
+#Post-hoc test: Dunn's Test - log-transformed benthic microbial total phosphorus stock
 dunnTest(as.numeric(log_tp_stock_gm2) ~ category,
          data=lit_rev_micro_tp,
          method="bonferroni")
@@ -1971,7 +1971,7 @@ lit_rev_all_bio_vs_tp$category = factor(
   lit_rev_all_bio_vs_tp$category,
   levels = c("lake_littoral_zone", "shallow_lake_and_pond", "wetland", "karstic_wetland"))
 
-#Log-transformed benthic algal biomass and phytoplankton vs. log-transformed water column total phosphorus across freshwater benthic ecosystem types and groups
+#Log-transformed benthic algal biomass and phytoplankton biomass vs. log-transformed water column total phosphorus across freshwater benthic ecosystem types and groups
 ggplot(lit_rev_all_bio_vs_tp) + theme_classic() +
   geom_jitter(aes(log_total_p_ugl, log_biomass, fill = habitat_type),
               pch = 21, size = 3) +
@@ -2012,10 +2012,10 @@ Benthic Ecosystem Types") +
                                                               "wetland" = "Wetlands"))) 
 
 
-#Benthic algal biomass stock against benthic algal total phosphorus stock####
+#Benthic algal biomass against benthic microbial total phosphorus stock####
 
 #Subset dataset to contain only needed variables 
-lit_rev_micro_bio_stock_vs_tp_stock <- lit_rev_micro %>%
+lit_rev_micro_bio_vs_tp_stock <- lit_rev_micro %>%
   select(publication_citation, habitat_type, category, group, chla_gm3,
          log_chla_gm3, tp_stock_gm3, log_tp_stock_gm3) %>%
   filter(chla_gm3 != -9999, log_chla_gm3 != -9999, tp_stock_gm3 != -9999, log_tp_stock_gm3 != -9999) %>%
@@ -2024,7 +2024,7 @@ lit_rev_micro_bio_stock_vs_tp_stock <- lit_rev_micro %>%
          log_chla_gm3 = as.numeric(as.character(log_chla_gm3)))
 
 #Order and make each freshwater benthic ecosystem type and category a factor
-lit_rev_micro_bio_stock_vs_tp_stock$habitat_type = factor(lit_rev_micro_bio_stock_vs_tp_stock$habitat_type,
+lit_rev_micro_bio_vs_tp_stock$habitat_type = factor(lit_rev_micro_bio_vs_tp_stock$habitat_type,
                                                           levels = c("eutrophic_lake_littoral_zone","lake_littoral_zone", 
                                                                      "mesotrophic_lake_littoral_zone", "oligotrophic_lake_littoral_zone",
                                                                      "reservoir_littoral_zone", "pond", "shallow_lagoon", 
@@ -2034,16 +2034,16 @@ lit_rev_micro_bio_stock_vs_tp_stock$habitat_type = factor(lit_rev_micro_bio_stoc
                                                                      "prairie_marsh", "swamp",
                                                                      "wetland",  "Everglades", "Everglades_other","karstic_wetland"))
 
-lit_rev_micro_bio_stock_vs_tp_stock$category = factor(
+lit_rev_micro_bio_vs_tp_stock$category = factor(
   lit_rev_micro_bio_stock_vs_tp_stock$category,
   levels = c("lake_littoral_zone", "shallow_lake_and_pond", "wetland", "karstic_wetland"))
 
-lit_rev_micro_bio_stock_vs_tp_stock$group = factor(
+lit_rev_micro_bio_vs_tp_stock$group = factor(
   lit_rev_micro_bio_stock_vs_tp_stock$group,
   levels = c("other_fw_benthic_system", "wetland"))
 
-#Count number of macrophyte biomass values per freshwater benthic ecosystem category
-lit_rev_micro_bio_stock_vs_tp_stock %>%
+#Count number of benthic algal biomass and benthic microbial total phosphorus stock values per freshwater benthic ecosystem category
+lit_rev_micro_bio_vs_tp_stock %>%
   group_by(group) %>%
   tally() %>%
   print(n = 2)
@@ -2051,28 +2051,28 @@ lit_rev_micro_bio_stock_vs_tp_stock %>%
 #1 other_fw_benthic_system   27
 #2 wetland                  52
 
-#Count number of publications per freshwater benthic ecosystem category
-lit_rev_micro_bio_stock_vs_tp_stock %>%
+#Count number of publications with benthic algal biomass and benthic microbial total phosphorus stock per freshwater benthic ecosystem category
+lit_rev_micro_bio_vs_tp_stock %>%
   group_by(group) %>%
   summarise(Unique_Elements = n_distinct(publication_citation))
 
 #1 other_fw_benthic_system              4
 #2 wetland                              5
 
-#Count total number of values
-lit_rev_micro_bio_stock_vs_tp_stock %>%
+#Count total number of benthic algal biomass and benthic microbial total phosphorus stock values
+lit_rev_micro_bio_vs_tp_stock %>%
   tally()
 
 #79
 
-#Count total number of publications
-lit_rev_micro_bio_stock_vs_tp_stock %>%
+#Count total number of publications containing benthic algal biomass and benthic microbial total phosphorus stock
+lit_rev_micro_bio_vs_tp_stock %>%
   summarise(Unique_Elements = n_distinct(publication_citation))
 
 #9
 
-#Log benthic algal biomass against log water column total phosphorus across freshwater benthic ecosystem types
-ggplot(lit_rev_micro_bio_stock_vs_tp_stock) + theme_classic() +
+#Log-transformed benthic algal biomass vs. log-transformed benthic microbial total phosphorus stock across freshwater benthic ecosystem types
+ggplot(lit_rev_micro_bio_vs_tp_stock) + theme_classic() +
   geom_jitter(aes(log_tp_stock_gm3, log_chla_gm3, fill = habitat_type),
               pch = 21, size = 3) +
   geom_smooth(aes(log_tp_stock_gm3, log_chla_gm3, color = group),
@@ -2111,20 +2111,20 @@ Benthic Ecosystem Types") +
                                                             c("other_fw_benthic_system" = "Other FW Benthic Systems",
                                                               "wetland" = "Wetlands"))) 
 
-#Subset dataset to only include values from other fw benthic system group
-lit_rev_micro_bio_stock_vs_tp_stock_other <- lit_rev_micro_bio_stock_vs_tp_stock %>%
+#Subset dataset to only include values from other freshwater benthic systems group
+lit_rev_micro_bio_vs_tp_stock_other <- lit_rev_micro_bio_vs_tp_stock %>%
   filter(group == "other_fw_benthic_system")
 
-#Linear model
-other_micro_tp_stock_lm <- lm(log_chla_gm3 ~ log_tp_stock_gm3, data = lit_rev_micro_bio_stock_vs_tp_stock_other)
+#Linear model: other freshwater systems group - log-transformed benthic algal biomass vs. log-transformed benthic microbial total phosphorus stock
+other_micro_tp_stock_lm <- lm(log_chla_gm3 ~ log_tp_stock_gm3, data = lit_rev_micro_bio_vs_tp_stock_other)
 
-#Coefficients
+#Coefficients: other freshwater systems group - log-transformed benthic algal biomass vs. log-transformed benthic microbial total phosphorus stock
 coef(other_micro_tp_stock_lm)
 
 #(Intercept) log_tp_stock_gm3 
 #-0.4459886        0.4122502
 
-#Statistical results
+#Statistical results: other freshwater systems group - log-transformed benthic algal biomass vs. log-transformed benthic microbial total phosphorus stock
 summary(other_micro_tp_stock_lm)
 
 #Residuals:
@@ -2142,20 +2142,20 @@ summary(other_micro_tp_stock_lm)
 #Multiple R-squared:  0.5152,	Adjusted R-squared:  0.4958 
 #F-statistic: 26.57 on 1 and 25 DF,  p-value: 2.501e-05
 
-#Subset dataset to only include values from wetland group
-lit_rev_micro_bio_stock_vs_tp_stock_wet <- lit_rev_micro_bio_stock_vs_tp_stock %>%
+#Subset dataset to only include values from wetlands group
+lit_rev_micro_bio_vs_tp_stock_wet <- lit_rev_micro_bio_stock_vs_tp_stock %>%
   filter(group == "wetland")
 
-#Linear model
-wet_micro_tp_stock_lm <- lm(log_chla_gm3 ~ log_tp_stock_gm3, data = lit_rev_micro_bio_stock_vs_tp_stock_wet)
+#Linear model: wetlands group - log-transformed benthic algal biomass vs. log-transformed benthic microbial total phosphorus stock
+wet_micro_tp_stock_lm <- lm(log_chla_gm3 ~ log_tp_stock_gm3, data = lit_rev_micro_bio_vs_tp_stock_wet)
 
-#Coefficients
+#Coefficients: wetlands group - log-transformed benthic algal biomass vs. log-transformed benthic microbial total phosphorus stock
 coef(wet_micro_tp_stock_lm)
 
 #(Intercept) log_tp_stock_gm3 
 #-0.4703879        0.4601205 
 
-#Statistical results
+#Statistical results: wetlands group - log-transformed benthic algal biomass vs. log-transformed benthic microbial total phosphorus stock
 summary(wet_micro_tp_stock_lm)
 
 #Residuals:
@@ -2173,9 +2173,9 @@ summary(wet_micro_tp_stock_lm)
 #Multiple R-squared:  0.1717,	Adjusted R-squared:  0.1551 
 #F-statistic: 10.36 on 1 and 50 DF,  p-value: 0.002259
 
-#Macrophyte biomass stock against macrophyte total phosphorus stock####
+#Macrophyte biomass stock vs. macrophyte total phosphorus stock####
 
-#Subset dataset to contain only variables needed
+#Subset dataset to contain only needed variables 
 lit_rev_macro_bio_stock_vs_tp_stock <- lit_rev_macro %>%
   select(publication_citation, habitat_type, category, group, dm_gm2,
          log_dm_gm2, tp_stock_gm2, log_tp_stock_gm2) %>%
@@ -2184,7 +2184,7 @@ lit_rev_macro_bio_stock_vs_tp_stock <- lit_rev_macro %>%
          log_dm_gm2 = as.numeric(as.character(log_dm_gm2)))
 
 #Order and make each freshwater benthic ecosystem type and category a factor
-lit_rev_macro_bio_stock_vs_tp_stock$habitat_type = factor(lit_rev_macro_bio_stock_vs_tp_stock$habitat_type,
+lit_rev_macro_bio_vs_tp_stock$habitat_type = factor(lit_rev_macro_bio_vs_tp_stock$habitat_type,
                                                           levels = c("lake_littoral_zone", 
                                                                      "pond", "shallow_lake", "bog", 
                                                                      "constructed_treatment_wetland", "fen", 
@@ -2192,16 +2192,16 @@ lit_rev_macro_bio_stock_vs_tp_stock$habitat_type = factor(lit_rev_macro_bio_stoc
                                                                      "tidal_marsh", "wetland", "Everglades", 
                                                                      "Everglades_other","karstic_wetland"))
 
-lit_rev_macro_bio_stock_vs_tp_stock$category = factor(
-  lit_rev_macro_bio_stock_vs_tp_stock$category,
+lit_rev_macro_bio_vs_tp_stock$category = factor(
+  lit_rev_macro_bio_vs_tp_stock$category,
   levels = c("lake_littoral_zone", "shallow_lake_and_pond", "wetland", "karstic_wetland"))
 
-lit_rev_macro_bio_stock_vs_tp_stock$group = factor(
+lit_rev_macro_bio_vs_tp_stock$group = factor(
   lit_rev_macro_bio_stock_vs_tp_stock$group,
   levels = c("other_fw_benthic_system", "wetland"))
 
-#Count number of macrophyte biomass values per freshwater benthic ecosystem category
-lit_rev_macro_bio_stock_vs_tp_stock %>%
+#Count number of macrophyte biomass and macrophyte total phosphorus stock values per freshwater benthic ecosystem category
+lit_rev_macro_bio_vs_tp_stock %>%
   group_by(group) %>%
   tally() %>%
   print(n = 2)
@@ -2209,27 +2209,27 @@ lit_rev_macro_bio_stock_vs_tp_stock %>%
 #1 other_fw_benthic_system   15
 #2 wetland                  296
 
-#Count number of publications per freshwater benthic ecosystem category
-lit_rev_macro_bio_stock_vs_tp_stock %>%
+#Count number of publications with macrophyte biomass and macrophyte total phosphorus stock per freshwater benthic ecosystem category
+lit_rev_macro_bio_vs_tp_stock %>%
   group_by(group) %>%
   summarise(Unique_Elements = n_distinct(publication_citation))
 
 #1 other_fw_benthic_system              1
 #2 wetland                            37
 
-#Count total number of values
-lit_rev_macro_bio_stock_vs_tp_stock %>%
+#Count total number of macrophyte biomass and macrophyte total phosphorus stock values
+lit_rev_macro_bio_vs_tp_stock %>%
   tally()
 
 #311
 
-#Count total number of publications
-lit_rev_macro_bio_stock_vs_tp_stock %>%
+#Count total number of publications containing macrophyte biomass and macrophyte total phosphorus stock 
+lit_rev_macro_bio_vs_tp_stock %>%
   summarise(Unique_Elements = n_distinct(publication_citation))
 
 #38
 
-#Log benthic algal biomass against log water column total phosphorus across freshwater benthic ecosystem types
+#Log-transformed macrophyte biomass vs. log-transformed macrophyte total phosphorus stock across freshwater benthic ecosystem types
 ggplot(lit_rev_macro_bio_stock_vs_tp_stock) + theme_classic() +
   geom_jitter(aes(log_tp_stock_gm2, log_dm_gm2, fill = habitat_type),
               pch = 21, size = 3) +
@@ -2264,20 +2264,20 @@ Benthic Ecosystem Types") +
                                                             c("other_fw_benthic_system" = "Other FW Benthic Systems",
                                                               "wetland" = "Wetlands"))) 
 
-#Subset dataset to only include values from other fw benthic system group
-lit_rev_macro_bio_stock_vs_tp_stock_other <- lit_rev_macro_bio_stock_vs_tp_stock %>%
+#Subset dataset to only include values from other freshwater benthic systems group
+lit_rev_macro_bio_vs_tp_stock_other <- lit_rev_macro_bio_vs_tp_stock %>%
   filter(group == "other_fw_benthic_system")
 
-#Linear model
-other_macro_tp_stock_lm <- lm(log_dm_gm2 ~ log_tp_stock_gm2, data = lit_rev_macro_bio_stock_vs_tp_stock_other)
+#Linear model: other freshwater benthic systems group - log-transformed macrophyte biomass vs. log-transformed macrophyte total phosphorus stock 
+other_macro_tp_stock_lm <- lm(log_dm_gm2 ~ log_tp_stock_gm2, data = lit_rev_macro_bio_vs_tp_stock_other)
 
-#Coefficients
+#Coefficients: other freshwater benthic systems group - log-transformed macrophyte biomass vs. log-transformed macrophyte total phosphorus stock 
 coef(other_macro_tp_stock_lm)
 
 #(Intercept) log_tp_stock_gm2
 #2.7802035        0.2469143 
 
-#Statistical results
+#Statistical results: other freshwater benthic systems group - log-transformed macrophyte biomass vs. log-transformed macrophyte total phosphorus stock 
 summary(other_macro_tp_stock_lm)
 
 #Residuals:
@@ -2295,20 +2295,20 @@ summary(other_macro_tp_stock_lm)
 #Multiple R-squared:  0.2323,	Adjusted R-squared:  0.1732 
 #F-statistic: 3.933 on 1 and 13 DF,  p-value: 0.06888
 
-#Subset dataset to only include values from wetland group
-lit_rev_macro_bio_stock_vs_tp_stock_wet <- lit_rev_macro_bio_stock_vs_tp_stock %>%
+#Subset dataset to only include values from wetlands group
+lit_rev_macro_bio_vs_tp_stock_wet <- lit_rev_macro_bio_vs_tp_stock %>%
   filter(group == "wetland")
 
-#Linear model
-wet_macro_tp_stock_lm <- lm(log_dm_gm2 ~ log_tp_stock_gm2, data = lit_rev_macro_bio_stock_vs_tp_stock_wet)
+#Linear model: wetlands group - log-transformed macrophyte biomass vs. log-transformed macrophyte total phosphorus stock 
+wet_macro_tp_stock_lm <- lm(log_dm_gm2 ~ log_tp_stock_gm2, data = lit_rev_macro_bio_vs_tp_stock_wet)
 
-#Coefficients
+#Coefficients: wetlands group - log-transformed macrophyte biomass vs. log-transformed macrophyte total phosphorus stock 
 coef(wet_macro_tp_stock_lm)
 
 #(Intercept) log_tp_stock_gm2
 #2.8569142        0.4863608 
 
-#Statistical results
+#Statistical results: wetlands group - log-transformed macrophyte biomass vs. log-transformed macrophyte total phosphorus stock 
 summary(wet_macro_tp_stock_lm)
 
 #Residuals:
@@ -2326,7 +2326,7 @@ summary(wet_macro_tp_stock_lm)
 #Multiple R-squared:  0.4128,	Adjusted R-squared:  0.4108 
 #F-statistic: 206.7 on 1 and 294 DF,  p-value: < 2.2e-16
 
-#Scatterplot with legend containing all relevant freshwater benthic ecosystem types####
+#Create legend containing all relevant freshwater benthic ecosystem types for above scatterplots####
 
 #Create datasets with same biomass title
 lit_rev_micro_biomass_tp_vs_stock <- lit_rev_micro_bio_stock_vs_tp_stock %>%
@@ -2358,7 +2358,7 @@ lit_rev_all_tp_vs_stock$category = factor(
   lit_rev_all_tp_vs_stock$category,
   levels = c("lake_littoral_zone", "shallow_lake_and_pond", "wetland", "karstic_wetland"))
 
-#Log benthic algal biomass and phytoplankton against log water column total phosphorus across freshwater benthic ecosystem types
+#Log-transformed benthic algal biomass and macrophyte biomass vs. benthic microbial total phosphorus stock and macrophyte total phosphorus stock, respectively, across freshwater benthic ecosystem types
 ggplot(lit_rev_all_tp_vs_stock) + theme_classic() +
   geom_jitter(aes(log_tp_stock, log_biomass, fill = habitat_type),
               pch = 21, size = 3) +
@@ -2402,12 +2402,12 @@ Benthic Ecosystem Types") +
 
 #Everglades analysis####
 
-#Load literature review datasets
+#Load Everglades case study dataset
 ever <- read_csv("D:\\Extra FIU Files\\Dissertation\\Chapter 1\\Data Publication\\ever_macro_micro_bio_conc_stock.csv") 
 
-#Benthic algal biomass vs. benthic algal total phosphorus concentration####
+#Benthic algal biomass vs. benthic microbial total phosphorus concentration####
 
-#Mean macrophyte biomass per freshwater benthic ecosystem type
+#Mean benthic algal biomass per wetland and habitat type
 ever_mean_micro <- ever %>%
   group_by(slough_plot_type) %>%
   dplyr::summarize(mean_biomass = mean(micro_chla_gm3)) %>%
@@ -2418,7 +2418,7 @@ ever_mean_micro <- ever %>%
 #3 ts_ridge               0.0711
 #4 ts_slough              0.212
 
-#Standard error macrophyte biomass per freshwater benthic ecosystem type
+#Standard error benthic algal biomass per wetland and habitat type
 ever_se_micro <- ever %>%
   group_by(slough_plot_type) %>%
   dplyr::summarize(se_biomass = se(micro_chla_gm3)) %>%
@@ -2429,7 +2429,7 @@ ever_se_micro <- ever %>%
 #3 ts_ridge             0.0276
 #4 ts_slough            0.0855
 
-#Mean macrophyte biomass per freshwater benthic ecosystem type
+#Mean benthic microbial total phosphorus stock per wetland and habitat type
 ever_mean_micro_stock <- ever %>%
   group_by(slough_plot_type) %>%
   dplyr::summarize(mean_stock = mean(micro_tp_stock_gm2)) %>%
@@ -2440,7 +2440,7 @@ ever_mean_micro_stock <- ever %>%
 #3 ts_ridge              0.00541
 #4 ts_slough             0.00628
 
-#Standard error macrophyte biomass per freshwater benthic ecosystem type
+#Standard error benthic microbial total phosphorus stock per wetland and habitat type
 ever_se_micro_stock <- ever %>%
   group_by(slough_plot_type) %>%
   dplyr::summarize(se_stock = se(micro_tp_stock_gm2)) %>%
@@ -2451,7 +2451,7 @@ ever_se_micro_stock <- ever %>%
 #3 ts_ridge            0.00181
 #4 ts_slough           0.00122
 
-#Scatterplot of benthic algal biomass vs. benthic algal total phosphorus concentration
+#benthic algal biomass vs. benthic algal total phosphorus concentration
 micro_bio_vs_tp_conc <- 
   ggplot(ever, aes(y = micro_chla_gm2, x = micro_tp_conc_ugg, color = producer_type, shape = slough_plot_type)) +
   geom_point(size = 5) +
@@ -2459,7 +2459,7 @@ micro_bio_vs_tp_conc <-
   scale_colour_manual(values = c("darkolivegreen3"), labels = c("Benthic Algae")) +
   scale_shape_manual(values = c(19, 21, 17, 24), labels = c("SRS Ridge", "SRS Slough", "TS Ridge", "TS Slough")) +
   ylab(expression(paste("Benthic Algal Biomass (Chl-a", g, " ", m^-2, ")", sep = ""))) +
-  xlab(expression(paste("Benthic Algal TP Concentration (", µg, " ", g^-1, ")", sep = ""))) +
+  xlab(expression(paste("Benthic Microbial TP Concentration (", µg, " ", g^-1, ")", sep = ""))) +
   labs(color = "Producer Type", shape = "Wetland Habitat") +
   theme_classic() +
   theme(axis.text = element_text(size = 16),
@@ -2469,7 +2469,7 @@ micro_bio_vs_tp_conc <-
 
 micro_bio_vs_tp_conc
 
-#Generalized additive model for microbial mat c stock against tp concentration across wetland plots
+#Generalized additive model- benthic algal biomass vs. benthic microbial total phosphorus concentration
 micro_bio_vs_tp_conc_gam <- gam(micro_chla_gm2 ~ s(micro_tp_conc_ugg), method = "REML", data = ever)
 summary(micro_bio_vs_tp_conc_gam)
 
@@ -2488,9 +2488,9 @@ summary(micro_bio_vs_tp_conc_gam)
 #R-sq.(adj) =  0.319   Deviance explained = 38.6%
 #-REML = -107.98  Scale est. = 0.00018307  n = 42
 
-#Benthic algal stock vs. benthic algal total phosphorus stock####
+#Benthic algal biomass vs. benthic microbial total phosphorus stock####
 
-#Scatterplot of benthic algal stock vs. benthic algal total phosphorus stock
+#Benthic algal biomass vs. benthic algal total phosphorus stock
 micro_bio_vs_tp_stock <- 
   ggplot(ever, aes(y = micro_chla_gm3, x = micro_tp_stock_gm3, color = producer_type, shape = slough_plot_type)) +
   geom_point(size = 5) +
@@ -2498,7 +2498,7 @@ micro_bio_vs_tp_stock <-
   scale_colour_manual(values = c("darkolivegreen3"), labels = c("Benthic Algae")) +
   scale_shape_manual(values = c(19, 21, 17, 24), labels = c("SRS Ridge", "SRS Slough", "TS Ridge", "TS Slough")) +
   ylab(expression(paste("Benthic Algal Biomass (Chl-a", g, " ", m^-3, ")", sep = ""))) +
-  xlab(expression(paste("Benthic Algal TP Stock (", g, " ", m^-3, ")", sep = ""))) +
+  xlab(expression(paste("Benthic Microbial TP Stock (", g, " ", m^-3, ")", sep = ""))) +
   labs(color = "Producer Type", shape = "Wetland Habitat") +
   theme_classic() +
   theme(axis.text = element_text(size = 16),
@@ -2508,7 +2508,7 @@ micro_bio_vs_tp_stock <-
 
 micro_bio_vs_tp_stock
 
-#Generalized additive model for microbial mat c stock against tp concentration across wetland plots
+#Generalized additive model - benthic algal biomass vs. benthic algal total phosphorus stock
 micro_bio_gm3_vs_tp_stock_gam <- gam(micro_chla_gm3 ~ s(micro_tp_stock_gm3), method = "REML", data = ever)
 summary(micro_bio_gm3_vs_tp_stock_gam)
 
@@ -2533,7 +2533,7 @@ summary(micro_bio_gm3_vs_tp_stock_gam)
 ever_macro <- ever %>%
   filter(total_macro_dm_gm2 != -9999, total_macro_tp_conc_ugg != -9999)
 
-#Mean macrophyte biomass per freshwater benthic ecosystem type
+#Mean macrophyte biomass per wetland and habitat type
 ever_mean_macro <- ever_macro %>%
   group_by(slough_plot_type) %>%
   dplyr::summarize(mean_biomass = mean(total_macro_dm_gm2)) %>%
@@ -2544,7 +2544,7 @@ ever_mean_macro <- ever_macro %>%
 #3 ts_ridge                 634.
 #4 ts_slough                321.
 
-#Standard error macrophyte biomass per freshwater benthic ecosystem type
+#Standard error macrophyte biomass per wetland and habitat type
 ever_se_macro <- ever_macro %>%
   group_by(slough_plot_type) %>%
   dplyr::summarize(se_biomass = se(total_macro_dm_gm2)) %>%
@@ -2555,7 +2555,7 @@ ever_se_macro <- ever_macro %>%
 #3 ts_ridge               67.0
 #4 ts_slough              70.2
 
-#Mean macrophyte biomass per freshwater benthic ecosystem type
+#Mean macrophyte total phosphorus stock per wetland and habitat type
 ever_mean_macro_stock <- ever_macro %>%
   group_by(slough_plot_type) %>%
   dplyr::summarize(mean_stock = mean(total_macro_tp_stock_gm2)) %>%
@@ -2566,7 +2566,7 @@ ever_mean_macro_stock <- ever_macro %>%
 #3 ts_ridge             0.289 
 #4 ts_slough            0.0750
 
-#Standard error macrophyte biomass per freshwater benthic ecosystem type
+#Standard error macrophyte total phosphorus stock per wetland and habitat type
 ever_se_macro_stock <- ever_macro %>%
   group_by(slough_plot_type) %>%
   dplyr::summarize(se_stock = se(total_macro_tp_stock_gm2)) %>%
@@ -2577,7 +2577,7 @@ ever_se_macro_stock <- ever_macro %>%
 #3 ts_ridge           0.174 
 #4 ts_slough          0.0106
 
-#Scatterplot of macrophyte biomass against macrophyte total phosphorus concentration
+#Macrophyte biomass vs. macrophyte total phosphorus concentration
 macro_bio_vs_tp_conc <- 
   ggplot(ever_macro, aes(y = total_macro_dm_gm2, x = total_macro_tp_conc_ugg, color = producer_type, shape = slough_plot_type)) +
   geom_point(size = 5) +
@@ -2596,7 +2596,7 @@ Community")) +
 
 macro_bio_vs_tp_conc
 
-#Generalized additive model for microbial mat c stock against tp concentration across wetland plots
+#Generalized additive model - macrophyte biomass vs. macrophyte total phosphorus concentration
 macro_bio_vs_tp_conc_gam <- gam(total_macro_dm_gm2 ~ s(total_macro_tp_conc_ugg), method = "REML", data = ever_macro)
 summary(macro_bio_vs_tp_conc_gam)
 
@@ -2613,55 +2613,13 @@ summary(macro_bio_vs_tp_conc_gam)
 #R-sq.(adj) =  0.0367   Deviance explained =  8.8%
 #-REML = 243.42  Scale est. = 75625     n = 36
 
-#Macrophyte stock vs. macrophyte total phosphorus stock####
-
-#Filter out missing values
-ever_macro_stock <- ever %>%
-  filter(total_macro_dm_gm3 != -9999, total_macro_tp_stock_gm3 != -9999, total_macro_tp_stock_gm3 < 2)
-
-#Scatterplot of macrophyte biomass against macrophyte total phosphorus concentration
-macro_bio_vs_tp_stock <- 
-  ggplot(ever_macro_stock, aes(y = total_macro_dm_gm3, x = total_macro_tp_stock_gm3, color = producer_type, shape = slough_plot_type)) +
-  geom_point(size = 5) +
-  geom_smooth(aes(total_macro_tp_stock_gm3, total_macro_dm_gm3, group = producer_type), method = "gam", colour = "cadetblue",  se = FALSE) +
-  scale_colour_manual(values = c("cadetblue"), labels = c("Macrophyte
-Community")) +
-  scale_shape_manual(values = c(19, 21, 17, 24), labels = c("SRS Ridge", "SRS Slough", "TS Ridge", "TS Slough")) +
-  ylab(expression(paste("Macrophyte Biomass (", g, " ", m^-3, ")", sep = ""))) +
-  xlab(expression(paste("Macrophyte TP Stock (", g, " ", m^-3, ")", sep = ""))) +
-  labs(color = "Producer Type", shape = "Wetland Habitat") +
-  theme_classic() +
-  theme(axis.text = element_text(size = 16),
-        axis.title = element_text(size = 18),
-        legend.text = element_text(size = 16),
-        legend.title = element_text(size = 18))
-
-macro_bio_vs_tp_stock
-
-#Generalized additive model for microbial mat c stock against tp concentration across wetland plots
-macro_bio_gm3_vs_tp_stock_gam <- gam(total_macro_dm_gm3 ~ s(total_macro_tp_stock_gm3), method = "REML", data = ever)
-summary(macro_bio_gm3_vs_tp_stock_gam)
-
-#Parametric coefficients:
-#Estimate Std. Error t value Pr(>|t|)    
-#(Intercept)    53.19     183.52    0.29    0.773
-
-#Approximate significance of smooth terms:
-#edf Ref.df     F p-value    
-#s(total_macro_tp_stock_gm3) 1.823  1.969 250.2  <2e-16 ***
-#---
-#Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-#R-sq.(adj) =  0.925   Deviance explained = 92.8%
-#-REML = 344.61  Scale est. = 1.4146e+06  n = 42
-
-#Macrophyte biomass vs. macrophyte total phosphorus stock for gm2####
+#Macrophyte biomass vs. macrophyte total phosphorus stock####
 
 #Filter out missing values
 ever_macro_stock_gm2 <- ever %>%
   filter(total_macro_dm_gm2 != -9999, total_macro_tp_stock_gm2 != -9999, total_macro_tp_stock_gm2 < 1)
 
-#Scatterplot of macrophyte biomass against macrophyte total phosphorus concentration
+#Macrophyte biomass vs. macrophyte total phosphorus stock
 macro_bio_vs_tp_stock_gm2 <- 
   ggplot(ever_macro_stock_gm2, aes(y = total_macro_dm_gm2, x = total_macro_tp_stock_gm2, color = producer_type, shape = slough_plot_type)) +
   geom_point(size = 5) +
@@ -2680,7 +2638,7 @@ Community")) +
 
 macro_bio_vs_tp_stock_gm2
 
-#Generalized additive model for microbial mat c stock against tp concentration across wetland plots
+#Generalized additive model - macrophyte biomass vs. macrophyte total phosphorus stock
 macro_bio_gm2_vs_tp_stock_gm2_gam <- gam(total_macro_dm_gm2 ~ s(total_macro_tp_stock_gm2), method = "REML", data = ever_macro_stock_gm2)
 summary(macro_bio_gm2_vs_tp_stock_gm2_gam)
 
@@ -2705,7 +2663,7 @@ summary(macro_bio_gm2_vs_tp_stock_gm2_gam)
 ever_prod <- ever %>%
   filter(total_prod_tp_conc_ugg != -9999, total_prod_bio_gm2 != -9999)
 
-#Scatterplot of total producer biomass against total producer total phosphorus concentration
+#Total producer biomass vs. total producer total phosphorus concentration
 prod_bio_vs_tp_conc <- 
   ggplot(ever_prod, aes(y = total_prod_bio_gm2, x = total_prod_tp_conc_ugg, color = producer_type, shape = slough_plot_type)) +
   geom_point(size = 5) +
@@ -2723,7 +2681,7 @@ prod_bio_vs_tp_conc <-
 
 prod_bio_vs_tp_conc
 
-#Generalized additive model for microbial mat c stock against tp concentration across wetland plots
+#Generalized additive model - total producer biomass vs. total producer total phosphorus concentration
 prod_bio_vs_tp_conc_gam <- gam(total_prod_bio_gm2 ~ s(total_prod_tp_conc_ugg), method = "REML", data = ever_prod)
 summary(prod_bio_vs_tp_conc_gam)
 
@@ -2740,13 +2698,13 @@ summary(prod_bio_vs_tp_conc_gam)
 #R-sq.(adj) =  0.0335   Deviance explained = 8.48%
 #-REML = 243.47  Scale est. = 75874     n = 36
 
-#Total producer biomass stock vs. total producer total phosphorus stock####
+#Total producer biomass vs. total producer total phosphorus stock####
 
 #Filter out missing values
 ever_prod_stock <- ever %>%
   filter(total_prod_tp_stock_gm3 != -9999, total_prod_bio_gm2 != -9999, total_prod_tp_stock_gm3 < 2)
 
-#Scatterplot of total producer biomass stock against total producer total phosphorus stock
+#Total producer biomass stock vs. total producer total phosphorus stock
 prod_bio_gm3_vs_tp_stock <- 
   ggplot(ever_prod_stock, aes(y = total_prod_bio_gm3, x = total_prod_tp_stock_gm3, color = producer_type, shape = slough_plot_type)) +
   geom_point(size = 5) +
@@ -2764,7 +2722,7 @@ prod_bio_gm3_vs_tp_stock <-
 
 prod_bio_gm3_vs_tp_stock
 
-#Generalized additive model for microbial mat c stock against tp concentration across wetland plots
+#Generalized additive model - total producer biomass stock vs. total producer total phosphorus stock
 prod_bio_gm3_vs_tp_stock_gam <- gam(total_prod_bio_gm3 ~ s(total_prod_tp_stock_gm3), data = ever_prod_stock)
 summary(prod_bio_gm3_vs_tp_stock_gam)
 
@@ -2786,7 +2744,7 @@ summary(prod_bio_gm3_vs_tp_stock_gam)
 
 #Clajam and elecel biomass vs. clajam and elecel total phosphorus concentration####
 
-#Subset dataset to contain only variables needed
+#Subset dataset to contain only needed variables 
 ever_clajam <- ever %>%
   select(slough_plot_type, total_clajam_dm_gm2, total_clajam_dm_gm3, total_clajam_tp_conc_ugg, 
          total_clajam_tp_stock_gm2, total_clajam_tp_stock_gm3) %>%
@@ -2816,7 +2774,7 @@ ever_elecel <- ever %>%
 #Combine datasets
 ever_macro_stacked <- rbind(ever_clajam, ever_elecel)
 
-#Scatterplot of benthic algal biomass vs. benthic algal total phosphorus concentration
+#Macrophyte biomass vs. macrophyte total phosphorus concentration per macrophyte species
 macro_stacked_bio_vs_tp_conc <- 
   ggplot(ever_macro_stacked, aes(y = biomass, x = tp_conc, color = macro_type, shape = slough_plot_type)) +
   geom_point(size = 5) +
@@ -2837,7 +2795,7 @@ cellulosa")) +
 
 macro_stacked_bio_vs_tp_conc
 
-#Generalized additive model for microbial mat c stock against tp concentration across wetland plots
+#Generalized additive model - clajam biomass vs. clajam total phosphorus concentration
 clajam_bio_vs_tp_conc_gam <- gam(biomass ~ s(tp_conc), method = "REML", data = ever_clajam)
 summary(clajam_bio_vs_tp_conc_gam)
 
@@ -2856,7 +2814,7 @@ summary(clajam_bio_vs_tp_conc_gam)
 #R-sq.(adj) =  0.244   Deviance explained = 28.9%
 #-REML = 222.81  Scale est. = 78389     n = 33
 
-#Generalized additive model for microbial mat c stock against tp concentration across wetland plots
+#Generalized additive model - elecel biomass vs. elecel total phosphorus concentration
 elecel_bio_vs_tp_conc_gam <- gam(biomass ~ s(tp_conc), method = "REML", data = ever_elecel)
 summary(elecel_bio_vs_tp_conc_gam)
 
@@ -2875,7 +2833,7 @@ summary(elecel_bio_vs_tp_conc_gam)
 
 #Clajam and elecel biomass stock vs. clajam and elecel total phosphorus stock####
 
-#Scatterplot of benthic algal biomass vs. benthic algal total phosphorus concentration
+#Macrophyte biomass vs. macrophyte total phosphorus stock per macrophyte species
 macro_stacked_bio_stock_vs_tp_stock <- 
   ggplot(ever_macro_stacked, aes(y = biomass_stock, x = tp_stock_gm3, color = macro_type, shape = slough_plot_type)) +
   geom_point(size = 5) +
@@ -2896,48 +2854,9 @@ cellulosa")) +
 
 macro_stacked_bio_stock_vs_tp_stock
 
-#Generalized additive model for microbial mat c stock against tp concentration across wetland plots
-clajam_bio_stock_vs_tp_stock_gam <- gam(biomass_stock ~ s(tp_stock_gm3), method = "REML", data = ever_clajam)
-summary(clajam_bio_stock_vs_tp_stock_gam)
+#Clajam and elecel biomass stock vs. clajam and elecel total phosphorus stock####
 
-#Parametric coefficients:
-#Estimate Std. Error t value Pr(>|t|)    
-#(Intercept)  1299.85      71.79   18.11   <2e-16 ***
-#---
-#Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-#Approximate significance of smooth terms:
-#edf Ref.df     F p-value    
-#s(tp_stock_gm3) 2.119  2.624 69.89  <2e-16 ***
-#---
-#Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-#R-sq.(adj) =  0.851   Deviance explained = 86.1%
-#-REML = 235.05  Scale est. = 1.7007e+05  n = 33
-
-#Generalized additive model for microbial mat c stock against tp concentration across wetland plots
-elecel_bio_stock_vs_tp_stock_gam <- gam(biomass_stock ~ s(tp_stock_gm3), method = "REML", data = ever_elecel)
-summary(elecel_bio_stock_vs_tp_stock_gam)
-
-#Parametric coefficients:
-#Estimate Std. Error t value Pr(>|t|)    
-#(Intercept)   277.28      20.87   13.29 1.76e-12 ***
-#---
-#Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-#Approximate significance of smooth terms:
-#edf Ref.df     F p-value    
-#s(tp_stock_gm3) 4.277  5.194 35.73  <2e-16 ***
-#---
-#Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-#R-sq.(adj) =  0.869   Deviance explained = 88.9%
-#-REML = 173.21  Scale est. = 12631     n = 29
-
-
-#Clajam and elecel biomass stock vs. clajam and elecel total phosphorus stock gm2####
-
-#Scatterplot of benthic algal biomass vs. benthic algal total phosphorus concentration
+#Macrophyte biomass vs. macrophyte total phosphorus stock per macrophyte species
 macro_stacked_bio_vs_tp_stock_gm2 <- 
   ggplot(ever_macro_stacked, aes(y = biomass, x = tp_stock, color = macro_type, shape = slough_plot_type)) +
   geom_point(size = 5) +
@@ -2958,7 +2877,7 @@ cellulosa")) +
 
 macro_stacked_bio_vs_tp_stock_gm2
 
-#Generalized additive model for microbial mat c stock against tp concentration across wetland plots
+#Generalized additive model - clajam biomass vs. clajam total phosphorus stock
 clajam_bio_vs_tp_stock_gam <- gam(biomass ~ s(tp_stock), method = "REML", data = ever_clajam)
 summary(clajam_bio_vs_tp_stock_gam)
 
@@ -2977,7 +2896,7 @@ summary(clajam_bio_vs_tp_stock_gam)
 #R-sq.(adj) =   0.91   Deviance explained = 91.9%
 #-REML = 191.61  Scale est. = 9307      n = 33
 
-#Generalized additive model for microbial mat c stock against tp concentration across wetland plots
+#Generalized additive model - elecel biomass vs. elecel total phosphorus stock
 elecel_bio_vs_tp_stock_gam <- gam(biomass ~ s(tp_stock), method = "REML", data = ever_elecel)
 summary(elecel_bio_vs_tp_stock_gam)
 
@@ -2997,9 +2916,9 @@ summary(elecel_bio_vs_tp_stock_gam)
 #-REML = 135.65  Scale est. = 778.34    n = 29
 
 
-#Scatterplot with legend containing all relevant producer types####
+#Lgend containing all relevant producer types####
 
-#Subset dataset to contain only variables needed
+#Subset dataset to contain only needed variables 
 ever_clajam_bio <- ever %>%
   select(slough_plot_type, total_clajam_dm_gm2) %>%
   rename(biomass = total_clajam_dm_gm2) %>%
@@ -3028,7 +2947,7 @@ ever_prod_bio <- ever %>%
 #Combine datasets
 ever_macro_stacked_all <- rbind(ever_micro_bio, ever_macro_bio, ever_clajam_bio, ever_elecel_bio, ever_prod_bio)
 
-#Scatterplot of benthic algal biomass vs. benthic algal total phosphorus concentration
+#Scatterplot of total producer biomass vs. total producer biomass
 macro_stacked_bio_all <- 
   ggplot(ever_macro_stacked_all, aes(y = biomass, x = biomass, color = prod_type, shape = slough_plot_type)) +
   geom_point(size = 5) +
@@ -3038,7 +2957,7 @@ macro_stacked_bio_all <-
   scale_shape_manual(values = c(19, 21, 17, 24), labels = c("SRS Ridge", "SRS Slough", "TS Ridge", "TS Slough")) +
   ylab(expression(paste("Biomas", sep = ""))) +
   labs(color = "Producer Type", shape = "Wetland Habitat") +
-  xlab(expression(paste("Macrophyte TP Stock (", g, "/", m^3, ")", sep = ""))) +
+  xlab(expression(paste("Biomass", sep = ""))) +
   theme_classic() +
   theme(axis.text = element_text(size = 16),
         axis.title = element_text(size = 18),
