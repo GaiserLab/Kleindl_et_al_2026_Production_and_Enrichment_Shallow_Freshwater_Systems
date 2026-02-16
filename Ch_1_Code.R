@@ -1803,7 +1803,7 @@ lit_rev_phyto_bio_vs_tp <- lit_rev_phyto %>%
 
 #Order and make each freshwater benthic ecosystem type and category a factor
 lit_rev_phyto_bio_vs_tp$habitat_type = factor(lit_rev_phyto_bio_vs_tp$habitat_type,
-                                              levels = c("eutrophic_lake_littoral_zone","lake_littoral_zone", 
+                                              levels = c("eutrophic_lake_littoral_zone", "lake_littoral_zone", 
                                                          "mesotrophic_lake_littoral_zone", "oligotrophic_lake_littoral_zone",
                                                          "shallow_lake", "shallow_reservoir",
                                                          "constructed_treatment_wetland", "non_tidal_coastal_wetland",
@@ -1899,7 +1899,7 @@ summary(other_phyto_tp_lm)
 #-1.2468 -0.4199 -0.0030  0.3188  3.3189 
 
 #Coefficients:
-#Estimate Std. Error t value Pr(>|t|)    
+#                 Estimate Std. Error t value Pr(>|t|)    
 #(Intercept)     -0.10039    0.10492  -0.957     0.34    
 #log_total_p_ugl  0.61253    0.06206   9.870   <2e-16 ***
 #---
@@ -1939,6 +1939,7 @@ summary(wet_phyto_tp_lm)
 #Residual standard error: 0.6246 on 101 degrees of freedom
 #Multiple R-squared:  0.2119,	Adjusted R-squared:  0.2041 
 #F-statistic: 27.16 on 1 and 101 DF,  p-value: 9.948e-07
+
 #Create legend containing all relevant freshwater benthic ecosystem types for above scatterplots####
 
 #Create datasets with same biomass title
@@ -1958,14 +1959,14 @@ lit_rev_all_bio_vs_tp$log_biomass <- as.numeric(lit_rev_all_bio_vs_tp$log_biomas
 unique(lit_rev_all_bio_vs_tp$habitat_type)
 
 #Order and make each freshwater benthic ecosystem type and category a factor
-lit_rev_all_bio_vs_tp$habitat_type = factor(lit_rev_all_bio_vs_tp$habitat_type, levels = c("eutrophic_lake_littoral_zone","lake_littoral_zone", 
+lit_rev_all_bio_vs_tp$habitat_type = factor(lit_rev_all_bio_vs_tp$habitat_type, levels = c("eutrophic_lake_littoral_zone", "lake_littoral_zone", 
                                                                                            "mesotrophic_lake_littoral_zone", "oligotrophic_lake_littoral_zone",
                                                                                            "reservoir_littoral_zone", "pond", "shallow_lagoon",
                                                                                            "shallow_lake", "shallow_reservoir", 
                                                                                            "constructed_treatment_wetland", "fen", 
                                                                                            "floodplain_wetland", "marsh", "non_tidal_coastal_wetland",
                                                                                            "prairie_marsh", "swamp", "wet_meadow", 
-                                                                                           "wetland",  "Everglades", "Everglades_other","karstic_wetland"))
+                                                                                           "wetland",  "Everglades", "Everglades_other", "karstic_wetland"))
 
 lit_rev_all_bio_vs_tp$category = factor(
   lit_rev_all_bio_vs_tp$category,
@@ -1999,7 +2000,7 @@ ggplot(lit_rev_all_bio_vs_tp) + theme_classic() +
   scale_color_manual(values = c( "dodgerblue3", "darkgreen"), 
                      labels = c( "Other FW Benthic Systems", "Wetlands")) +
   ylab(expression(paste("Log Biomass", sep = ""))) +
-  xlab(expression(paste("Log Water Column TP (",µg,"/",l,")", sep = ""))) +
+  xlab(expression(paste("Log Water Column TP ",µg," ",L^-1,")", sep = ""))) +
   labs(color = "Groups", fill = "Freshwater
 Benthic Ecosystem Types") +
   theme(axis.text = element_text(size = 14, color = "black"),
@@ -2025,14 +2026,14 @@ lit_rev_micro_bio_vs_tp_stock <- lit_rev_micro %>%
 
 #Order and make each freshwater benthic ecosystem type and category a factor
 lit_rev_micro_bio_vs_tp_stock$habitat_type = factor(lit_rev_micro_bio_vs_tp_stock$habitat_type,
-                                                          levels = c("eutrophic_lake_littoral_zone","lake_littoral_zone", 
+                                                          levels = c("eutrophic_lake_littoral_zone", "lake_littoral_zone", 
                                                                      "mesotrophic_lake_littoral_zone", "oligotrophic_lake_littoral_zone",
                                                                      "reservoir_littoral_zone", "pond", "shallow_lagoon", 
                                                                      "shallow_lake", "shallow_reservoir",
                                                                      "constructed_treatment_wetland", "fen", 
                                                                      "floodplain_wetland", "marsh", "non_tidal_coastal_wetland",
                                                                      "prairie_marsh", "swamp",
-                                                                     "wetland",  "Everglades", "Everglades_other","karstic_wetland"))
+                                                                     "wetland",  "Everglades", "Everglades_other", "karstic_wetland"))
 
 lit_rev_micro_bio_vs_tp_stock$category = factor(
   lit_rev_micro_bio_stock_vs_tp_stock$category,
@@ -2190,7 +2191,7 @@ lit_rev_macro_bio_vs_tp_stock$habitat_type = factor(lit_rev_macro_bio_vs_tp_stoc
                                                                      "constructed_treatment_wetland", "fen", 
                                                                      "floodplain_wetland", "marsh", "non_tidal_coastal_wetland",
                                                                      "tidal_marsh", "wetland", "Everglades", 
-                                                                     "Everglades_other","karstic_wetland"))
+                                                                     "Everglades_other", "karstic_wetland"))
 
 lit_rev_macro_bio_vs_tp_stock$category = factor(
   lit_rev_macro_bio_vs_tp_stock$category,
@@ -2248,7 +2249,7 @@ ggplot(lit_rev_macro_bio_stock_vs_tp_stock) + theme_classic() +
                     breaks = c("lake_littoral_zone", "pond", "shallow_lake", "bog", 
                                "constructed_treatment_wetland", "fen", 
                                "floodplain_wetland", "marsh", "non_tidal_coastal_wetland",
-                               "tidal_marsh", "wetland",  "Everglades", "Everglades_other","karstic_wetland")) +
+                               "tidal_marsh", "wetland", "Everglades", "Everglades_other", "karstic_wetland")) +
   scale_color_manual(values = c( "dodgerblue3", "darkgreen"), 
                      labels = c( "Other FW Benthic Systems", "Wetlands")) +
   ylab(expression(paste("Log Macrophyte Biomass ( ",g," ",m^-2,")", sep = ""))) +
@@ -2345,14 +2346,14 @@ lit_rev_all_tp_vs_stock$log_biomass <- as.numeric(lit_rev_all_tp_vs_stock$log_bi
 unique(lit_rev_all_tp_vs_stock$habitat_type)
 
 #Order and make each freshwater benthic ecosystem type and category a factor
-lit_rev_all_tp_vs_stock$habitat_type = factor(lit_rev_all_tp_vs_stock$habitat_type, levels = c("eutrophic_lake_littoral_zone","lake_littoral_zone", 
+lit_rev_all_tp_vs_stock$habitat_type = factor(lit_rev_all_tp_vs_stock$habitat_type, levels = c("eutrophic_lake_littoral_zone", "lake_littoral_zone", 
                                                                                                "mesotrophic_lake_littoral_zone", "oligotrophic_lake_littoral_zone",
                                                                                                "reservoir_littoral_zone", "pond", "shallow_lagoon",
                                                                                                "shallow_lake", "shallow_reservoir", 
                                                                                                "constructed_treatment_wetland", "fen", 
                                                                                                "floodplain_wetland", "marsh", "non_tidal_coastal_wetland",
                                                                                                "prairie_marsh", "swamp", "tidal_marsh", "wet_meadow", 
-                                                                                               "wetland",  "Everglades", "Everglades_other","karstic_wetland"))
+                                                                                               "wetland",  "Everglades", "Everglades_other", "karstic_wetland"))
 
 lit_rev_all_tp_vs_stock$category = factor(
   lit_rev_all_tp_vs_stock$category,
@@ -2375,7 +2376,7 @@ ggplot(lit_rev_all_tp_vs_stock) + theme_classic() +
                                "Oligotrophic Lake Littoral Zone", "Reservoir Littoral Zone", 
                                "Pond", "Shallow Lagoon", "Shallow Lake", "Shallow Reservoir",
                                "Constructed Treatment Wetland", "Fen", "Floodplain Wetland",
-                               "Marsh", "Non-Tidal Coastal Wetland", "Prairie Marsh", "Swamp","Tidal Marsh", "Wet Meadow",
+                               "Marsh", "Non-Tidal Coastal Wetland", "Prairie Marsh", "Swamp", "Tidal Marsh", "Wet Meadow",
                                "Wetland", "Everglades - This Study", "Everglades - Other Studies", "Karstic Wetland"),
                     breaks = c("eutrophic_lake_littoral_zone",
                                "lake_littoral_zone", "mesotrophic_lake_littoral_zone", 
@@ -2890,7 +2891,6 @@ summary(elecel_bio_vs_tp_stock_gam)
 
 #R-sq.(adj) =  0.884   Deviance explained =   90%
 #-REML = 135.65  Scale est. = 778.34    n = 29
-
 
 #Create legend containing all relevant producer types for above scatterplots####
 
