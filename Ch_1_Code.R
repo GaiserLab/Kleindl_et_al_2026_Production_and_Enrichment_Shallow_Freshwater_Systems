@@ -1899,7 +1899,7 @@ summary(other_phyto_tp_lm)
 #-1.2469 -0.4202 -0.0029  0.3187  3.3185 
 
 #Coefficients:
-#Estimate Std. Error t value Pr(>|t|)    
+#                 Estimate Std. Error t value Pr(>|t|)    
 #(Intercept)      -0.10042    0.10492  -0.957    0.339    
 #log_water_tp_ugl  0.61253    0.06206   9.870   <2e-16 ***
 #---
