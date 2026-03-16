@@ -34,11 +34,11 @@ lit_rev_micro <- read_csv("D:\\Extra FIU Files\\Dissertation\\Chapter 1\\Data Pu
 lit_rev_phyto <- read_csv("D:\\Extra FIU Files\\Dissertation\\Chapter 1\\Data Publication\\FCE1294_Lit_Review_Phyto.csv")
 
 
-#Macrophyte biomass among freshwater benthic ecosystem types####
+##Macrophyte biomass among freshwater benthic ecosystem types####
 
 #Subset dataset to contain only needed variables 
 lit_rev_macro_bio <- lit_rev_macro %>%
-  select(publication_citation, habitat_type, category, group, dm_gm2, log_dm_gm2) %>%
+  dplyr::select(publication_citation, habitat_type, category, group, dm_gm2, log_dm_gm2) %>%
   filter(dm_gm2 != -9999, log_dm_gm2 != -9999)
 
 #Order and make each freshwater benthic ecosystem type and category a factor
@@ -302,14 +302,14 @@ dunnTest(as.numeric(log_dm_gm2) ~ category,
          method = "bonferroni")
 
 #                                   Comparison          Z       P.unadj       P.adj
-#1       karstic_wetland - lake_littoral_zone   9.8281541 8.516541e-23 5.109925e-22
-#2    karstic_wetland - shallow_lake_and_pond  -0.7946693 4.268059e-01 1.000000e+00
-#3 lake_littoral_zone - shallow_lake_and_pond  -8.6355067 5.846728e-18 3.508037e-17
-#4                  karstic_wetland - wetland  -2.1278494 3.334957e-02 2.000974e-01
-#5               lake_littoral_zone - wetland -17.5449908 6.496331e-69 3.897798e-68
-#6            shallow_lake_and_pond - wetland  -0.6733125 5.007485e-01 1.000000e+00
+#1       karstic_wetland - lake_littoral_zone   9.8334445 8.080668e-23 4.848401e-22
+#2    karstic_wetland - shallow_lake_and_pond  -0.7962127 4.259084e-01 1.000000e+00
+#3 lake_littoral_zone - shallow_lake_and_pond  -8.6413905 5.553298e-18 3.331979e-17
+#4                  karstic_wetland - wetland  -2.1111861 3.475632e-02 2.085379e-01
+#5               lake_littoral_zone - wetland -17.5278808 8.778056e-69 5.266834e-68
+#6            shallow_lake_and_pond - wetland  -0.6589946 5.098993e-01 1.000000e+00
 
-#Macrophyte total phosphorus stock among freshwater benthic ecosystem types####
+##Macrophyte total phosphorus stock among freshwater benthic ecosystem types####
 
 #Subset dataset to contain only needed variables 
 lit_rev_macro_tp <- lit_rev_macro %>%
@@ -546,7 +546,7 @@ dunnTest(as.numeric(log_tp_stock_gm2) ~ category,
 #5               lake_littoral_zone - wetland   8.048830 8.358940e-16 5.015364e-15
 #6            shallow_lake_and_pond - wetland  -4.771772 1.826119e-06 1.095671e-05
 
-#Benthic algal biomass among freshwater benthic ecosystem types####
+##Benthic algal biomass among freshwater benthic ecosystem types####
 
 #Subset dataset to contain only needed variables 
 lit_rev_micro_bio <- lit_rev_micro %>%
@@ -816,7 +816,7 @@ dunnTest(as.numeric(log_chla_gm3) ~ category,
 #6            shallow_lake_and_pond - wetland -0.6798072 0.4966265210 1.000000000
 
 
-#Benthic microbial total phosphorus stock among freshwater benthic ecosystem types####
+##Benthic microbial total phosphorus stock among freshwater benthic ecosystem types####
 
 #Subset dataset to contain only needed variables 
 lit_rev_micro_tp <- lit_rev_micro %>%
@@ -1043,7 +1043,7 @@ dunnTest(as.numeric(log_tp_stock_gm2) ~ category,
 #5               lake_littoral_zone - wetland -1.2978877 1.943259e-01 1.000000e+00
 #6            shallow_lake_and_pond - wetland -1.3340676 1.821817e-01 1.000000e+00
 
-#Phytoplankton biomass among freshwater benthic ecosystem types####
+##Phytoplankton biomass among freshwater benthic ecosystem types####
 
 #Subset dataset to contain only needed variables 
 lit_rev_phyto_bio <- lit_rev_phyto %>%
@@ -1270,7 +1270,7 @@ dunnTest(as.numeric(log_chla_ugl) ~ category,
 #3            shallow_lake_and_pond - wetland  0.5323664 5.944723e-01 1.000000e+00
 
 
-#Water column total phosphorus among freshwater benthic ecosystem types####
+##Water column total phosphorus among freshwater benthic ecosystem types####
 
 #Subset datasets to contain only needed variables 
 lit_rev_phyto_tp_wc <- lit_rev_phyto %>%
@@ -1404,7 +1404,7 @@ se_lit_rev_phyto_micro_tp_wc_cat <- lit_rev_phyto_micro_tp_wc %>%
 #3 wetland                    92.8 
 #4 karstic_wetland             3.66
 
-#Count number of water column total phosphorusvalues per freshwater benthic ecosystem category
+#Count number of water column total phosphorus values per freshwater benthic ecosystem category
 lit_rev_phyto_micro_tp_wc %>%
   group_by(category) %>%
   tally() %>%
@@ -1557,7 +1557,7 @@ dunnTest(as.numeric(log_water_tp_ugl) ~ category,
 #5               lake_littoral_zone - wetland -10.250925 1.172167e-24 7.033001e-24
 #6            shallow_lake_and_pond - wetland   2.144063 3.202787e-02 1.921672e-01
 
-#Create legend containing all relevant freshwater benthic ecosystem types for above boxplots####
+##Create legend containing all relevant freshwater benthic ecosystem types for above boxplots####
 
 #Create datasets with same biomass title
 lit_rev_macro_biomass <- lit_rev_macro_bio %>%
@@ -1633,7 +1633,7 @@ Benthic Ecosystem Types") +
   theme(axis.text = element_text(size = 14, color = "black"),
         axis.title = element_text(size = 16))
 
-#Benthic algal biomass vs. water column total phosphorus####
+##Benthic algal biomass vs. water column total phosphorus####
 
 #Subset dataset to contain only needed variables 
 lit_rev_micro_bio_vs_tp <- lit_rev_micro %>%
@@ -1793,7 +1793,7 @@ summary(wet_micro_tp_lm)
 #Multiple R-squared:  0.1536,	Adjusted R-squared:  0.1425 
 #F-statistic: 13.79 on 1 and 76 DF,  p-value: 0.000387
 
-#Phytoplankton biomass vs. water column total phosphorus####
+##Phytoplankton biomass vs. water column total phosphorus####
 
 #Subset dataset to contain only needed variables 
 lit_rev_phyto_bio_vs_tp <- lit_rev_phyto %>%
@@ -1940,7 +1940,7 @@ summary(wet_phyto_tp_lm)
 #Multiple R-squared:  0.2119,	Adjusted R-squared:  0.2041 
 #F-statistic: 27.15 on 1 and 101 DF,  p-value: 9.983e-07
 
-#Create legend containing all relevant freshwater benthic ecosystem types for above scatterplots####
+##Create legend containing all relevant freshwater benthic ecosystem types for above scatterplots####
 
 #Create datasets with same biomass title
 lit_rev_micro_biomass_tp <- lit_rev_micro_bio_vs_tp %>%
@@ -2013,7 +2013,7 @@ Benthic Ecosystem Types") +
                                                               "wetland" = "Wetlands"))) 
 
 
-#Benthic algal biomass against benthic microbial total phosphorus stock####
+##Benthic algal biomass against benthic microbial total phosphorus stock####
 
 #Subset dataset to contain only needed variables 
 lit_rev_micro_bio_vs_tp_stock <- lit_rev_micro %>%
@@ -2141,7 +2141,7 @@ summary(other_micro_tp_stock_lm)
 
 #Residual standard error: 0.7938 on 25 degrees of freedom
 #Multiple R-squared:  0.5152,	Adjusted R-squared:  0.4958 
-#F-statistic: 26.57 on 1 and 25 DF,  p-value: 2.501e-05e-05
+#F-statistic: 26.57 on 1 and 25 DF,  p-value: 2.501e-05
 
 #Subset dataset to only include values from wetlands group
 lit_rev_micro_bio_vs_tp_stock_wet <- lit_rev_micro_bio_vs_tp_stock %>%
@@ -2174,7 +2174,7 @@ summary(wet_micro_tp_stock_lm)
 #Multiple R-squared:  0.1723,	Adjusted R-squared:  0.1558 
 #F-statistic: 10.41 on 1 and 50 DF,  p-value: 0.002213
 
-#Macrophyte biomass stock vs. macrophyte total phosphorus stock####
+##Macrophyte biomass stock vs. macrophyte total phosphorus stock####
 
 #Subset dataset to contain only needed variables 
 lit_rev_macro_bio_vs_tp_stock <- lit_rev_macro %>%
@@ -2327,7 +2327,7 @@ summary(wet_macro_tp_stock_lm)
 #Multiple R-squared:  0.4128,	Adjusted R-squared:  0.4108 
 #F-statistic: 206.7 on 1 and 294 DF,  p-value: < 2.2e-16
 
-#Create legend containing all relevant freshwater benthic ecosystem types for above scatterplots####
+##Create legend containing all relevant freshwater benthic ecosystem types for above scatterplots####
 
 #Create datasets with same biomass title
 lit_rev_micro_biomass_tp_vs_stock <- lit_rev_micro_bio_vs_tp_stock %>%
@@ -2401,12 +2401,12 @@ Benthic Ecosystem Types") +
                                                               "wetland" = "Wetlands"))) 
 
 
-#Everglades analysis####
+#Everglades Analysis####
 
 #Load Everglades case study dataset
 ever <- read_csv("D:\\Extra FIU Files\\Dissertation\\Chapter 1\\Data Publication\\FCE1294_Ever_Case_Study.csv") 
 
-#Benthic algal biomass vs. benthic microbial total phosphorus concentration####
+##Benthic algal biomass vs. benthic microbial total phosphorus concentration####
 
 #Mean benthic algal biomass per wetland and habitat type
 ever_mean_micro <- ever %>%
@@ -2493,7 +2493,7 @@ summary(micro_bio_vs_tp_conc_gam)
 #R-sq.(adj) =  0.308   Deviance explained = 36.3%
 #-REML = -110.27  Scale est. = 0.00018623  n = 42
 
-#Benthic algal biomass vs. benthic microbial total phosphorus stock####
+##Benthic algal biomass vs. benthic microbial total phosphorus stock####
 
 #Benthic algal biomass vs. benthic algal total phosphorus stock
 micro_bio_vs_tp_stock <- 
@@ -2533,7 +2533,7 @@ summary(micro_bio_gm3_vs_tp_stock_gam)
 #R-sq.(adj) =  0.386   Deviance explained = 40.9%
 #-REML = -28.497  Scale est. = 0.012169  n = 42
 
-#Macrophyte biomass vs. macrophyte total phosphorus concentration####
+##Macrophyte biomass vs. macrophyte total phosphorus concentration####
 
 #Filter out missing values
 ever_macro <- ever %>%
@@ -2624,7 +2624,7 @@ summary(macro_bio_vs_tp_conc_gam)
 #-REML =  248.7  Scale est. = 78503     n = 36
 
 
-#Macrophyte biomass vs. macrophyte total phosphorus stock####
+##Macrophyte biomass vs. macrophyte total phosphorus stock####
 
 #Filter out missing values
 ever_macro_stock_gm2 <- ever %>%
@@ -2672,7 +2672,7 @@ summary(macro_bio_gm2_vs_tp_stock_gm2_gam)
 #R-sq.(adj) =  0.423   Deviance explained = 45.2%
 #-REML = 233.91  Scale est. = 44283     n = 35
 
-#Total producer biomass vs. total producer total phosphorus concentration####
+##Total producer biomass vs. total producer total phosphorus concentration####
 
 #Filter out missing values
 ever_prod <- ever %>%
@@ -2717,7 +2717,7 @@ summary(prod_bio_vs_tp_conc_gam)
 #R-sq.(adj) =  -2.62e-06   Deviance explained = 0.000234%
 #-REML =  248.7  Scale est. = 78502     n = 36
 
-#Total producer biomass vs. total producer total phosphorus stock####
+##Total producer biomass vs. total producer total phosphorus stock####
 
 #Filter out missing values
 ever_prod_stock <- ever %>%
@@ -2764,7 +2764,7 @@ summary(prod_bio_gm3_vs_tp_stock_gam)
 #R-sq.(adj) =  0.686   Deviance explained = 70.7%
 #GCV = 6.43e+05  Scale est. = 5.8257e+05  n = 35
 
-#Clajam and elecel biomass vs. clajam and elecel total phosphorus concentration####
+##Clajam and elecel biomass vs. clajam and elecel total phosphorus concentration####
 
 #Subset dataset to contain only needed variables 
 ever_clajam <- ever %>%
@@ -2853,7 +2853,7 @@ summary(elecel_bio_vs_tp_conc_gam)
 #R-sq.(adj) =  -1.44e-06   Deviance explained = 0.000531%
 #-REML = 164.74  Scale est. = 6695.8    n = 29
 
-#Clajam and elecel biomass stock vs. clajam and elecel total phosphorus stock####
+##Clajam and elecel biomass stock vs. clajam and elecel total phosphorus stock####
 
 #Macrophyte biomass vs. macrophyte total phosphorus stock per macrophyte species
 macro_stacked_bio_vs_tp_stock_gm2 <- 
@@ -2914,7 +2914,7 @@ summary(elecel_bio_vs_tp_stock_gam)
 #R-sq.(adj) =   0.88   Deviance explained = 89.6%
 #-REML = 141.85  Scale est. = 802.78    n = 29
 
-#Create legend containing all relevant producer types for above scatterplots####
+##Create legend containing all relevant producer types for above scatterplots####
 
 #Subset dataset to contain only needed variables 
 ever_clajam_bio <- ever %>%
