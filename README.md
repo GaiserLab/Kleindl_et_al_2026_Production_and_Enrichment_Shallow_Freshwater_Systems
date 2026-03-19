@@ -17,7 +17,7 @@ Corresponding Author: Paige M Kleindl; [pklei007@fiu.edu](mailto:pklei007@fiu.ed
 
 ## Affiliations
 
-1 and 3. Department of Biological Sciences, Institute of Environment, Florida International University, 11200 SW 8th Street Miami, FL 33199 USA
+1. and 3. Department of Biological Sciences, Institute of Environment, Florida International University, 11200 SW 8th Street Miami, FL 33199 USA
 2. Arnet Pharmaceuticals, 2525 David Rd Suite 330, Davie, FL 33317 USA
 
 
@@ -48,5 +48,3 @@ Corresponding Author: Paige M Kleindl; [pklei007@fiu.edu](mailto:pklei007@fiu.ed
 ## Acknowledgments
 
 We would like to thank the Gaiser Laboratory Information Manager, Gabriel Kamener, for his assistance with metadata development and data publication. This project was supported by the South Florida-Caribbean Cooperative Ecosystems Studies Unit (SFC CESU) funded through the National Park Service under Cooperative Agreement number 800022170 and by the Cristina Menendez Fellowship from Florida International University and funded through the Miccosukee Tribe of Indians of Florida. This paper was developed in collaboration with the Florida Coastal Everglades Long-Term Ecological Research (FCE LTER) program funded through the National Science Foundation under Cooperative Agreement number DEB-2025954. The authors declare no conflict of interest. 
-
---
