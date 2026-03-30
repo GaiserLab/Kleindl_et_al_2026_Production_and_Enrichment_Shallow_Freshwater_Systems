@@ -222,8 +222,8 @@ ggplot(lit_rev_macro_bio, aes(x = as.factor(category), y = as.numeric(dm_gm2), f
     drop = FALSE,
     name = 'Categories',
     labels = c('Littoral Zone', 'Shallow Lake and Pond', 'Wetland', 'Karstic Wetland')) +
-  labs(fill = "Freshwater
-Benthic Ecosystem Types") +
+  labs(fill = "Shallow 
+Freshwater Ecosystem Types") +
   ylab(expression(paste("Macrophyte Biomass (DM  ",g," ",m^-2,")", sep = ""))) +
   xlab(expression(paste("Categories", sep = ""))) +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3, color = "grey60", 
@@ -280,8 +280,8 @@ ggplot(lit_rev_macro_bio, aes(x = as.factor(category), y = as.numeric(log_dm_gm2
     drop = FALSE,
     name = 'Categories',
     labels = c('Littoral Zone', 'Shallow Lake and Pond', 'Wetland', 'Karstic Wetland')) +
-  labs(fill = "Freshwater
-Benthic Ecosystem Types") +
+  labs(fill = "Shallow 
+Freshwater Ecosystem Types") +
   ylab(expression(paste("Log Macrophyte Biomass (DM  ",g," ",m^-2,")", sep = ""))) +
   xlab(expression(paste("Categories", sep = ""))) +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3, color = "grey60", 
@@ -466,8 +466,8 @@ ggplot(lit_rev_macro_tp, aes(x = as.factor(category), y = as.numeric(tp_stock_gm
     drop = FALSE,
     name = 'Categories',
     labels = c('Littoral Zone', 'Shallow Lake and Pond', 'Wetland', 'Karstic Wetland')) +
-  labs(fill = "Freshwater
-Benthic Ecosystem Types") +
+  labs(fill = "Shallow 
+Freshwater Ecosystem Types") +
   ylab(expression(paste("Macrophyte TP Stock ( ",g," ",m^-2,")", sep = ""))) +
   xlab(expression(paste("Categories", sep = ""))) +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3, color = "grey60", 
@@ -517,8 +517,8 @@ ggplot(lit_rev_macro_tp, aes(x = as.factor(category), y = as.numeric(log_tp_stoc
     drop = FALSE,
     name = 'Categories',
     labels = c('Littoral Zone', 'Shallow Lake and Pond', 'Wetland', 'Karstic Wetland')) +
-  labs(fill = "Freshwater
-Benthic Ecosystem Types") +
+  labs(fill = "Shallow 
+Freshwater Ecosystem Types") +
   ylab(expression(paste("Log Macrophyte TP Stock ( ",g," ",m^-2,")", sep = ""))) +
   xlab(expression(paste("Categories", sep = ""))) +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3, color = "grey60", 
@@ -730,8 +730,8 @@ ggplot(lit_rev_micro_bio, aes(x = as.factor(category), y = as.numeric(chla_gm3),
     drop = FALSE,
     name = 'Categories',
     labels = c('Littoral Zone', 'Shallow Lake and Pond', 'Wetland', 'Karstic Wetland')) +
-  labs(fill = "Freshwater
-Benthic Ecosystem Types") +
+  labs(fill = "Shallow 
+Freshwater Ecosystem Types") +
   ylab(expression(paste("Benthic Algal Biomass (Chl-a   ",g," ",m^-3,")", sep = ""))) +
   xlab(expression(paste("Categories", sep = ""))) +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3, color = "grey60", 
@@ -786,8 +786,8 @@ ggplot(lit_rev_micro_bio, aes(x = as.factor(category), y = as.numeric(log_chla_g
     drop = FALSE,
     name = 'Categories',
     labels = c('Littoral Zone', 'Shallow Lake and Pond', 'Wetland', 'Karstic Wetland')) +
-  labs(fill = "Freshwater
-Benthic Ecosystem Types") +
+  labs(fill = "Shallow 
+Freshwater Ecosystem Types") +
   ylab(expression(paste("Log Benthic Algal Biomass (Chl-a   ",g," ",m^-3,")", sep = ""))) +
   xlab(expression(paste("Categories", sep = ""))) +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3, color = "grey60", 
@@ -963,8 +963,8 @@ ggplot(lit_rev_micro_tp, aes(x = as.factor(category), y = as.numeric(tp_stock_gm
     drop = FALSE,
     name = 'Categories',
     labels = c('Littoral Zone', 'Shallow Lake and Pond', 'Wetland', 'Karstic Wetland')) +
-  labs(fill = "Freshwater
-Benthic Ecosystem Types") +
+  labs(fill = "Shallow 
+Freshwater Ecosystem Types") +
   ylab(expression(paste("Benthic Microbial TP Stock ( ",g," ",m^-2,")", sep = ""))) +
   xlab(expression(paste("Categories", sep = ""))) +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3, color = "grey60", 
@@ -1014,8 +1014,8 @@ ggplot(lit_rev_micro_tp, aes(x = as.factor(category), y = as.numeric(log_tp_stoc
     drop = FALSE,
     name = 'Categories',
     labels = c('Littoral Zone', 'Shallow Lake and Pond', 'Wetland', 'Karstic Wetland')) +
-  labs(fill = "Freshwater
-Benthic Ecosystem Types") +
+  labs(fill = "Shallow 
+Freshwater Ecosystem Types") +
   ylab(expression(paste("Log Benthic Microbial TP Stock ( ",g," ",m^-2,")", sep = ""))) +
   xlab(expression(paste("Categories", sep = ""))) +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3, color = "grey60", 
@@ -1194,8 +1194,8 @@ ggplot(lit_rev_phyto_bio, aes(x = as.factor(category), y = as.numeric(chla_ugl),
     drop = FALSE,
     name = 'Categories',
     labels = c('Littoral Zone', 'Shallow Lake and Pond', 'Wetland', 'Karstic Wetland')) +
-  labs(fill = "Freshwater
-Benthic Ecosystem Types") +
+  labs(fill = "Shallow 
+Freshwater Ecosystem Types") +
   ylab(expression(paste("Phytoplankton Biomass (Chl-a   ",µg," ",L^-1,")", sep = ""))) +
   xlab(expression(paste("Categories", sep = ""))) +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3, color = "grey60", 
@@ -1243,8 +1243,8 @@ ggplot(lit_rev_phyto_bio, aes(x = as.factor(category), y = as.numeric(log_chla_u
     drop = FALSE,
     name = 'Categories',
     labels = c('Littoral Zone', 'Shallow Lake and Pond', 'Wetland', 'Karstic Wetland')) +
-  labs(fill = "Freshwater
-Benthic Ecosystem Types") +
+  labs(fill = "Shallow 
+Freshwater Ecosystem Types") +
   ylab(expression(paste("Log Phytoplankton Biomass (Chl-a   ",µg," ",L^-1,")", sep = ""))) +
   xlab(expression(paste("Categories", sep = ""))) +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3, color = "grey60", 
@@ -1468,8 +1468,8 @@ ggplot(lit_rev_phyto_micro_tp_wc, aes(x = as.factor(category), y = as.numeric(wa
     drop = FALSE,
     name = 'Categories',
     labels = c('Littoral Zone', 'Shallow Lake and Pond', 'Wetland', 'Karstic Wetland')) +
-  labs(fill = "Freshwater
-Benthic Ecosystem Types") +
+  labs(fill = "Shallow 
+Freshwater Ecosystem Types") +
   ylab(expression(paste("Water TP ( ",µg," ",L^-1,")", sep = ""))) +
   xlab(expression(paste("Categories", sep = ""))) +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3, color = "grey60", 
@@ -1528,8 +1528,8 @@ ggplot(lit_rev_phyto_micro_tp_wc, aes(x = as.factor(category), y = as.numeric(lo
     drop = FALSE,
     name = 'Categories',
     labels = c('Littoral Zone', 'Shallow Lake and Pond', 'Wetland', 'Karstic Wetland')) +
-  labs(fill = "Freshwater
-Benthic Ecosystem Types") +
+  labs(fill = "Shallow 
+Freshwater Ecosystem Types") +
   ylab(expression(paste("Log Water TP ( ",µg," ",L^-1,")", sep = ""))) +
   xlab(expression(paste("Categories", sep = ""))) +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3, color = "grey60", 
@@ -1624,8 +1624,8 @@ ggplot(lit_rev_all_bio, aes(x = as.factor(category), y = as.numeric(biomass), fi
     drop = FALSE,
     name = 'Categories',
     labels = c('Littoral Zone', 'Shallow Lake and Pond', 'Wetland', 'Karstic Wetland')) +
-  labs(fill = "Freshwater
-Benthic Ecosystem Types") +
+  labs(fill = "Shallow 
+Freshwater Ecosystem Types") +
   ylab(expression(paste("Biomass", sep = ""))) +
   xlab(expression(paste("Categories", sep = ""))) +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3, color = "grey60", 
@@ -1717,18 +1717,18 @@ ggplot(lit_rev_micro_bio_vs_tp) + theme_classic() +
                                "marsh", "non_tidal_coastal_wetland", "prairie_marsh", "swamp",
                                "wetland", "Everglades", "Everglades_other", "karstic_wetland")) +
   scale_color_manual(values = c( "dodgerblue3", "darkgreen"), 
-                     labels = c( "Other FW Benthic Systems", "Wetlands")) +
+                     labels = c( "Other Shallow FW Systems", "Wetlands")) +
   ylab(expression(paste("Log Benthic Algal Biomass (Chl-a   ",g," ",m^-3,")", sep = ""))) +
   xlab(expression(paste("Log Water TP (",µg," ",L^-1,")", sep = ""))) +
-  labs(color = "Groups", fill = "Freshwater
-Benthic Ecosystem Types") +
+  labs(color = "Groups", fill = "Shallow
+Freshwater Ecosystem Types") +
   theme(axis.text = element_text(size = 14, color = "black"),
         axis.title = element_text(size = 16),
         legend.text = element_text(size = 14),
         legend.title = element_text(size = 16),
         strip.text = element_text(size = 16)) +
   facet_wrap(~group, scales = "free", labeller = labeller(group = 
-                                                            c("other_fw_benthic_system" = "Other FW Benthic Systems",
+                                                            c("other_fw_benthic_system" = "Other Shallow FW Systems",
                                                               "wetland" = "Wetlands"))) 
 
 #Subset dataset to only include values from other freshwater benthic systems group
@@ -1864,18 +1864,18 @@ ggplot(lit_rev_phyto_bio_vs_tp) + theme_classic() +
                                "constructed_treatment_wetland", "floodplain_wetland",
                                "non_tidal_coastal_wetland", "swamp", "wet_meadow", "wetland")) +
   scale_color_manual(values = c( "dodgerblue3", "darkgreen"), 
-                     labels = c( "Other FW Benthic Systems", "Wetlands")) +
+                     labels = c( "Other Shallow FW Systems", "Wetlands")) +
   ylab(expression(paste("Log Phytoplankton Biomass (Chl-a   ",µg," ",L^-1,")", sep = ""))) +
   xlab(expression(paste("Log Water TP (",µg," ",L^-1,")", sep = ""))) +
-  labs(color = "Groups", fill = "Freshwater
-Benthic Ecosystem Types") +
+  labs(color = "Groups", fill = "Shallow
+Freshwater Ecosystem Types") +
   theme(axis.text = element_text(size = 14, color = "black"),
         axis.title = element_text(size = 16),
         legend.text = element_text(size = 14),
         legend.title = element_text(size = 16),
         strip.text = element_text(size = 16)) +
   facet_wrap(~group, scales = "free", labeller = labeller(group = 
-                                                            c("other_fw_benthic_system" = "Other FW Benthic Systems",
+                                                            c("other_fw_benthic_system" = "Other Shallow FW Systems",
                                                               "wetland" = "Wetlands"))) 
 
 #Subset dataset to only include values from other freshwater benthic systems group
@@ -1998,18 +1998,18 @@ ggplot(lit_rev_all_bio_vs_tp) + theme_classic() +
                                "marsh", "non_tidal_coastal_wetland", "prairie_marsh", "swamp", "wet_meadow",
                                "wetland", "Everglades", "Everglades_other", "karstic_wetland")) +
   scale_color_manual(values = c( "dodgerblue3", "darkgreen"), 
-                     labels = c( "Other FW Benthic Systems", "Wetlands")) +
+                     labels = c( "Other Shallow FW Systems", "Wetlands")) +
   ylab(expression(paste("Log Biomass", sep = ""))) +
   xlab(expression(paste("Log Water Column TP ",µg," ",L^-1,")", sep = ""))) +
-  labs(color = "Groups", fill = "Freshwater
-Benthic Ecosystem Types") +
+  labs(color = "Groups", fill = "Shallow
+Freshwater Ecosystem Types") +
   theme(axis.text = element_text(size = 14, color = "black"),
         axis.title = element_text(size = 16),
         legend.text = element_text(size = 14),
         legend.title = element_text(size = 16),
         strip.text = element_text(size = 16)) +
   facet_wrap(~group, scales = "free", labeller = labeller(group = 
-                                                            c("other_fw_benthic_system" = "Other FW Benthic Systems",
+                                                            c("other_fw_benthic_system" = "Other Shallow FW Systems",
                                                               "wetland" = "Wetlands"))) 
 
 
@@ -2098,18 +2098,18 @@ ggplot(lit_rev_micro_bio_vs_tp_stock) + theme_classic() +
                                "marsh", "non_tidal_coastal_wetland", "prairie_marsh", "swamp",
                                "wetland", "Everglades", "Everglades_other", "karstic_wetland")) +
   scale_color_manual(values = c( "dodgerblue3", "darkgreen"), 
-                     labels = c( "Other FW Benthic Systems", "Wetlands")) +
+                     labels = c( "Other Shallow FW Systems", "Wetlands")) +
   ylab(expression(paste("Log Benthic Algal Biomass (Chl-a   ",g," ",m^-3,")", sep = ""))) +
   xlab(expression(paste("Log Benthic Microbial TP Stock (",g," ",m^-3,")", sep = ""))) +
-  labs(color = "Groups", fill = "Freshwater
-Benthic Ecosystem Types") +
+  labs(color = "Groups", fill = "Shallow
+Freshwater Ecosystem Types") +
   theme(axis.text = element_text(size = 14, color = "black"),
         axis.title = element_text(size = 16),
         legend.text = element_text(size = 14),
         legend.title = element_text(size = 16),
         strip.text = element_text(size = 16)) +
   facet_wrap(~group, scales = "free", labeller = labeller(group = 
-                                                            c("other_fw_benthic_system" = "Other FW Benthic Systems",
+                                                            c("other_fw_benthic_system" = "Other Shallow FW Systems",
                                                               "wetland" = "Wetlands"))) 
 
 #Subset dataset to only include values from other freshwater benthic systems group
@@ -2251,18 +2251,18 @@ ggplot(lit_rev_macro_bio_vs_tp_stock) + theme_classic() +
                                "floodplain_wetland", "marsh", "non_tidal_coastal_wetland",
                                "tidal_marsh", "wetland", "Everglades", "Everglades_other", "karstic_wetland")) +
   scale_color_manual(values = c( "dodgerblue3", "darkgreen"), 
-                     labels = c( "Other FW Benthic Systems", "Wetlands")) +
+                     labels = c( "Other Shallow FW Systems", "Wetlands")) +
   ylab(expression(paste("Log Macrophyte Biomass ( ",g," ",m^-2,")", sep = ""))) +
   xlab(expression(paste("Log Macrophyte TP Stock (",g," ",m^-2,")", sep = ""))) +
-  labs(color = "Groups", fill = "Freshwater
-Benthic Ecosystem Types") +
+  labs(color = "Groups", fill = "Shallow
+Freshwater Ecosystem Types") +
   theme(axis.text = element_text(size = 14, color = "black"),
         axis.title = element_text(size = 16),
         legend.text = element_text(size = 14),
         legend.title = element_text(size = 16),
         strip.text = element_text(size = 16)) +
   facet_wrap(~group, scales = "free", labeller = labeller(group = 
-                                                            c("other_fw_benthic_system" = "Other FW Benthic Systems",
+                                                            c("other_fw_benthic_system" = "Other Shallow FW Systems",
                                                               "wetland" = "Wetlands"))) 
 
 #Subset dataset to only include values from other freshwater benthic systems group
@@ -2386,18 +2386,18 @@ ggplot(lit_rev_all_tp_vs_stock) + theme_classic() +
                                "marsh", "non_tidal_coastal_wetland", "prairie_marsh", "swamp", "tidal_marsh", "wet_meadow",
                                "wetland", "Everglades", "Everglades_other", "karstic_wetland")) +
   scale_color_manual(values = c( "dodgerblue3", "darkgreen"), 
-                     labels = c( "Other FW Benthic Systems", "Wetlands")) +
+                     labels = c( "Other Shallow FW Systems", "Wetlands")) +
   ylab(expression(paste("Log Biomass", sep = ""))) +
   xlab(expression(paste("Log TP Stock", sep = ""))) +
-  labs(color = "Groups", fill = "Freshwater
-Benthic Ecosystem Types") +
+  labs(color = "Groups", fill = "Shallow
+Freshwater Ecosystem Types") +
   theme(axis.text = element_text(size = 14, color = "black"),
         axis.title = element_text(size = 16),
         legend.text = element_text(size = 14),
         legend.title = element_text(size = 16),
         strip.text = element_text(size = 16)) +
   facet_wrap(~group, scales = "free", labeller = labeller(group = 
-                                                            c("other_fw_benthic_system" = "Other FW Benthic Systems",
+                                                            c("other_fw_benthic_system" = "Other Shallow FW Systems",
                                                               "wetland" = "Wetlands"))) 
 
 
