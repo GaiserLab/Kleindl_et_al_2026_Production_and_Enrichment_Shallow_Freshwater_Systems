@@ -1470,7 +1470,7 @@ ggplot(lit_rev_phyto_micro_tp_wc, aes(x = as.factor(category), y = as.numeric(wa
     labels = c('Littoral Zone', 'Shallow Lake and Pond', 'Wetland', 'Karstic Wetland')) +
   labs(fill = "Shallow 
 Freshwater Ecosystem Types") +
-  ylab(expression(paste("Water TP ( ",µg," ",L^-1,")", sep = ""))) +
+  ylab(expression(paste("Water-Column TP ( ",µg," ",L^-1,")", sep = ""))) +
   xlab(expression(paste("Categories", sep = ""))) +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3, color = "grey60", 
                position = position_dodge2(width = 1, preserve = "single")) +
@@ -1530,7 +1530,7 @@ ggplot(lit_rev_phyto_micro_tp_wc, aes(x = as.factor(category), y = as.numeric(lo
     labels = c('Littoral Zone', 'Shallow Lake and Pond', 'Wetland', 'Karstic Wetland')) +
   labs(fill = "Shallow 
 Freshwater Ecosystem Types") +
-  ylab(expression(paste("Log Water TP ( ",µg," ",L^-1,")", sep = ""))) +
+  ylab(expression(paste("Log Water-Column TP ( ",µg," ",L^-1,")", sep = ""))) +
   xlab(expression(paste("Categories", sep = ""))) +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 3, color = "grey60", 
                position = position_dodge2(width = 1, preserve = "single")) +
@@ -1719,7 +1719,7 @@ ggplot(lit_rev_micro_bio_vs_tp) + theme_classic() +
   scale_color_manual(values = c( "dodgerblue3", "darkgreen"), 
                      labels = c( "Other Shallow FW Systems", "Wetlands")) +
   ylab(expression(paste("Log Benthic Algal Biomass (Chl-a   ",g," ",m^-3,")", sep = ""))) +
-  xlab(expression(paste("Log Water TP (",µg," ",L^-1,")", sep = ""))) +
+  xlab(expression(paste("Log Water-Column TP (",µg," ",L^-1,")", sep = ""))) +
   labs(color = "Groups", fill = "Shallow
 Freshwater Ecosystem Types") +
   theme(axis.text = element_text(size = 14, color = "black"),
@@ -1866,7 +1866,7 @@ ggplot(lit_rev_phyto_bio_vs_tp) + theme_classic() +
   scale_color_manual(values = c( "dodgerblue3", "darkgreen"), 
                      labels = c( "Other Shallow FW Systems", "Wetlands")) +
   ylab(expression(paste("Log Phytoplankton Biomass (Chl-a   ",µg," ",L^-1,")", sep = ""))) +
-  xlab(expression(paste("Log Water TP (",µg," ",L^-1,")", sep = ""))) +
+  xlab(expression(paste("Log Water-Column TP (",µg," ",L^-1,")", sep = ""))) +
   labs(color = "Groups", fill = "Shallow
 Freshwater Ecosystem Types") +
   theme(axis.text = element_text(size = 14, color = "black"),
