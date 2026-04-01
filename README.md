@@ -15,12 +15,14 @@
  Corresponding Author: Paige M Kleindl; [pklei007@fiu.edu](mailto:pklei007@fiu.edu)
 
 
-## Affiliations
+## Affiliation
 
- 1., 2., and 3. Department of Biological Sciences, Institute of Environment, Florida International University, 11200 SW 8th Street Miami, FL 33199 USA
+Department of Biological Sciences, Institute of Environment, Florida International University, 11200 SW 8th Street Miami, FL 33199 USA
 
 ## Present Address
- 2. Arnet Pharmaceuticals, 2525 David Rd Suite 330, Davie, FL 33317 USA
+
+1. and 3. Same as Affiliation
+2. Arnet Pharmaceuticals, 2525 David Rd Suite 330, Davie, FL 33317 USA
 
 
 ## Contact
