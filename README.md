@@ -20,7 +20,7 @@ Corresponding Author: Paige M Kleindl; [pklei007@fiu.edu](mailto:pklei007@fiu.ed
 1., 2., and 3. Department of Biological Sciences, Institute of Environment, Florida International University, 11200 SW 8th Street Miami, FL 33199 USA
 
 ## Present Address
-2. Arnet Pharmaceuticals, 2525 David Rd Suite 330, Davie, FL 33317 USA
+ 2. Arnet Pharmaceuticals, 2525 David Rd Suite 330, Davie, FL 33317 USA
 
 
 ## Contact
@@ -37,15 +37,16 @@ Corresponding Author: Paige M Kleindl; [pklei007@fiu.edu](mailto:pklei007@fiu.ed
 
 ## Keywords
 
-- Trophic status
+- Algae
 - Alternative stable state
+- Everglades
 - Freshwater
-- Phosphorus
+- Literature Review
 - Macrophyte
-- Microbial mat
+- Microbial Mat
+- Phosphorus
 - Phytoplankton
-- Literature review
-  
+- Trophic status  
 
 ## Acknowledgments
 
