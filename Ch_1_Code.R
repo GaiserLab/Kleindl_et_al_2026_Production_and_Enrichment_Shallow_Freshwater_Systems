@@ -1,4 +1,5 @@
-#Chapter 1 Analysis
+#R-Code for Data Package:
+#FCE1294_Kleindl_LiteratureReview
 #Script by: Paige Kleindl
 #12-2-2025
 
@@ -17,6 +18,9 @@ library(tidyverse) #version 2.0.0
 library(Hmisc) #version 5.2.3
 library(ggcorrplot) #version 0.1.4.1
 library(FSA) #version 0.10.0
+library(sf) #version 1.1.0
+library(ggspatial) #version 1.1.10
+library(ggrepel) #version 0.9.8
 
 #Make graph appear in a new window  
 dev.new()
@@ -2405,6 +2409,102 @@ Freshwater Ecosystem Types") +
 
 #Load Everglades case study dataset
 ever <- read_csv("D:\\Extra FIU Files\\Dissertation\\Chapter 1\\Data Publication\\FCE1294_Ever_Case_Study.csv") 
+
+##Create a map of the Everglades case study####
+#Generate census with UTM points added
+ever_utm <- st_as_sf(ever, coords = c("easting", "northing"),
+                       remove = FALSE,
+                       crs = 26917)
+st_crs(ever_utm)
+
+#Set the path to the zipped spatial files
+enp_spatial <- "D:/Extra FIU Files/Dissertation/Chapter 1/Data Publication/FCE1294_ENP_Shapefile.zip"
+
+fl_spatial <- "D:/Extra FIU Files/Dissertation/Chapter 1/Data Publication/FCE1294_FL_Shapefile.zip"
+
+#Ensure files exist
+file.exists(enp_spatial)
+
+file.exists(fl_spatial)
+
+#Unzip files to the same directory
+unzip("D:/Extra FIU Files/Dissertation/Chapter 1/Data Publication/FCE1294_ENP_Shapefile.zip", 
+      exdir = "D:/Extra FIU Files/Dissertation/Chapter 1/Data Publication/FCE1294_ENP_Shapefile")
+
+unzip("D:/Extra FIU Files/Dissertation/Chapter 1/Data Publication/FCE1294_FL_Shapefile.zip", 
+      exdir = "D:/Extra FIU Files/Dissertation/Chapter 1/Data Publication/FCE1294_FL_Shapefile")
+
+#Check contents of the extracted folder
+list.files("D:/Extra FIU Files/Dissertation/Chapter 1/Data Publication/FCE1294_ENP_Shapefile")
+
+list.files("D:/Extra FIU Files/Dissertation/Chapter 1/Data Publication/FCE1294_FL_Shapefile")
+
+#Read in unzipped geospatial files
+enp <- st_read(dsn = "D:/Extra FIU Files/Dissertation/Chapter 1/Data Publication/FCE1294_ENP_Shapefile")
+
+fl_no_turkey <- st_read(dsn = "D:/Extra FIU Files/Dissertation/Chapter 1/Data Publication/FCE1294_FL_Shapefile")
+
+srs <- st_read(dsn = "D:/Extra FIU Files/Dissertation/Chapter 1/Data Publication/FCE1294_SRS_Shapefile")
+
+ts <- st_read( dsn = "D:/Extra FIU Files/Dissertation/Chapter 1/Data Publication/FCE1294_TS_Shapefile")
+
+#Create shape factor
+ever_utm$shape <- c(rep(19, 24), rep(17, 18))
+
+#Deduplicate data for label layer
+labels_ever <- ever_utm %>%
+  distinct(sitename, .keep_all = TRUE)
+
+#Nudge labels on map
+labels_ever$nudge_x <- c(0, 200, -4000, -4500, -5500, -7500)
+labels_ever$nudge_y <- c(-3000, 3500, 250, -500, 750, 500)
+
+#Map with observational survey and experiment sites
+map_output <- ggplot() + 
+  geom_sf(data = enp, size = 0.01, fill = "gray80") + 
+  geom_sf(data = srs, size = 0.01, fill = "lightskyblue3") + 
+  geom_sf(data = ts, size = 0.01, fill = "lightskyblue1") + 
+  geom_sf(data = fl_no_turkey, size = 0.005, color = "black", fill = NA) + 
+  geom_point(data = ever_utm, aes(x = easting, y = northing,
+                                  shape = factor(ever_utm$shape)),
+             size = 3, color = "black") +
+  scale_shape_manual(values = c("17" = 17, "19" = 19), breaks = c("19", "17"),  
+                     labels = c("SRS", "TS/Ph")) +
+  geom_text_repel(
+    data = labels_ever,
+    aes(x = easting, y = northing, label = sitename),
+    size = 4,
+    color = "black", 
+    max.overlaps = Inf,
+    nudge_x = labels_ever$nudge_x,
+    nudge_y = labels_ever$nudge_y,
+    segment.color = NA) +
+  coord_sf(xlim = c(449000, 595270), ylim = c(2747000, 2860000), expand = FALSE) +
+  labs(shape = "Everglades
+Wetland Basins",
+       x = "Longitude",
+       y = "Latitude") +
+  theme_bw() +
+  theme(panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        axis.text.x = element_text(size = 16, angle = 45, hjust = 1),
+        axis.text.y = element_text(size = 16),
+        axis.title = element_text(size = 18),
+        legend.text = element_text(size = 16),
+        legend.title = element_text(size = 18)) +
+  annotation_scale(location = "br", width_hint = 0.2)+
+  annotation_north_arrow(
+    location = "bl", 
+    which_north = "true", 
+    style = north_arrow_orienteering(),
+    height = unit(1, "cm"),             
+    width = unit(1, "cm"))
+
+map_output
+
+summary(ever_utm$sitename)
+
 
 ##Benthic algal biomass vs. benthic microbial total phosphorus concentration####
 
