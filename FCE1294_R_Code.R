@@ -182,7 +182,7 @@ lit_rev_macro_bio %>%
 
 #1 lake_littoral_zone                 51
 #2 shallow_lake_and_pond              21
-#3 wetland                           127
+#3 wetland                           125
 #4 karstic_wetland                     9
 
 #Count total number of macrophyte biomass values
@@ -195,7 +195,7 @@ lit_rev_macro_bio %>%
 lit_rev_macro_bio %>%
   summarise(Unique_Elements = n_distinct(publication_citation))
 
-#206
+#204
 
 #Macrophyte biomass among freshwater benthic ecosystem types and categories
 ggplot(lit_rev_macro_bio, aes(x = as.factor(category), y = as.numeric(dm_gm2), fill = as.factor(habitat_type))) +
@@ -433,7 +433,7 @@ lit_rev_macro_tp %>%
 
 #1 lake_littoral_zone                  1
 #2 shallow_lake_and_pond               4
-#3 wetland                            55
+#3 wetland                            54
 #4 karstic_wetland                     2
 
 #Count total number of macrophyte total phosphorus stock values
@@ -446,7 +446,7 @@ lit_rev_macro_tp %>%
 lit_rev_macro_tp %>%
   summarise(Unique_Elements = n_distinct(publication_citation))
 
-#62
+#61
 
 #Macrophyte total phosphorus stock among freshwater benthic ecosystem types and categories
 ggplot(lit_rev_macro_tp, aes(x = as.factor(category), y = as.numeric(tp_stock_gm2), fill = as.factor(habitat_type))) +
