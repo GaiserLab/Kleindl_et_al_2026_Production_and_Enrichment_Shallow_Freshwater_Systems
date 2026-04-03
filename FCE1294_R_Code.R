@@ -29,13 +29,13 @@ dev.new()
 
 #Load literature review datasets
 #macrophyte dataset
-lit_rev_macro <- read_csv("D:\\Extra FIU Files\\Dissertation\\Chapter 1\\Data Publication\\FCE1294_Lit_Review_Macro.csv")
+lit_rev_macro <- read_csv("data/FCE1294_Lit_Review_Macro.csv")
 
 #microbial mat dataset
-lit_rev_micro <- read_csv("D:\\Extra FIU Files\\Dissertation\\Chapter 1\\Data Publication\\FCE1294_Lit_Review_Benthic_Micro.csv")
+lit_rev_micro <- read_csv("data/FCE1294_Lit_Review_Benthic_Micro.csv")
 
 #phytoplankton dataset
-lit_rev_phyto <- read_csv("D:\\Extra FIU Files\\Dissertation\\Chapter 1\\Data Publication\\FCE1294_Lit_Review_Phyto.csv")
+lit_rev_phyto <- read_csv("data/FCE1294_Lit_Review_Phyto.csv")
 
 
 ##Macrophyte biomass among freshwater benthic ecosystem types####
@@ -2408,7 +2408,7 @@ Freshwater Ecosystem Types") +
 #Everglades Analysis####
 
 #Load Everglades case study dataset
-ever <- read_csv("D:\\Extra FIU Files\\Dissertation\\Chapter 1\\Data Publication\\FCE1294_Ever_Case_Study.csv") 
+ever <- read_csv("data/FCE1294_Ever_Case_Study.csv") 
 
 ##Create a map of the Everglades case study####
 #Generate census with UTM points added
@@ -2417,36 +2417,14 @@ ever_utm <- st_as_sf(ever, coords = c("easting", "northing"),
                        crs = 26917)
 st_crs(ever_utm)
 
-#Set the path to the zipped spatial files
-enp_spatial <- "D:/Extra FIU Files/Dissertation/Chapter 1/Data Publication/FCE1294_ENP_Shapefile.zip"
+#Read in geospatial files
+enp <- st_read(dsn = "shapefiles/FCE1294_ENP_Shapefile")
 
-fl_spatial <- "D:/Extra FIU Files/Dissertation/Chapter 1/Data Publication/FCE1294_FL_Shapefile.zip"
+fl_no_turkey <- st_read(dsn = "shapefiles/FCE1294_FL_Shapefile")
 
-#Ensure files exist
-file.exists(enp_spatial)
+srs <- st_read(dsn = "shapefiles/FCE1294_SRS_Shapefile")
 
-file.exists(fl_spatial)
-
-#Unzip files to the same directory
-unzip("D:/Extra FIU Files/Dissertation/Chapter 1/Data Publication/FCE1294_ENP_Shapefile.zip", 
-      exdir = "D:/Extra FIU Files/Dissertation/Chapter 1/Data Publication/FCE1294_ENP_Shapefile")
-
-unzip("D:/Extra FIU Files/Dissertation/Chapter 1/Data Publication/FCE1294_FL_Shapefile.zip", 
-      exdir = "D:/Extra FIU Files/Dissertation/Chapter 1/Data Publication/FCE1294_FL_Shapefile")
-
-#Check contents of the extracted folder
-list.files("D:/Extra FIU Files/Dissertation/Chapter 1/Data Publication/FCE1294_ENP_Shapefile")
-
-list.files("D:/Extra FIU Files/Dissertation/Chapter 1/Data Publication/FCE1294_FL_Shapefile")
-
-#Read in unzipped geospatial files
-enp <- st_read(dsn = "D:/Extra FIU Files/Dissertation/Chapter 1/Data Publication/FCE1294_ENP_Shapefile")
-
-fl_no_turkey <- st_read(dsn = "D:/Extra FIU Files/Dissertation/Chapter 1/Data Publication/FCE1294_FL_Shapefile")
-
-srs <- st_read(dsn = "D:/Extra FIU Files/Dissertation/Chapter 1/Data Publication/FCE1294_SRS_Shapefile")
-
-ts <- st_read( dsn = "D:/Extra FIU Files/Dissertation/Chapter 1/Data Publication/FCE1294_TS_Shapefile")
+ts <- st_read( dsn = "shapefiles/FCE1294_TS_Shapefile")
 
 #Create shape factor
 ever_utm$shape <- c(rep(19, 24), rep(17, 18))
@@ -2502,9 +2480,6 @@ Wetland Basins",
     width = unit(1, "cm"))
 
 map_output
-
-summary(ever_utm$sitename)
-
 
 ##Benthic algal biomass vs. benthic microbial total phosphorus concentration####
 
