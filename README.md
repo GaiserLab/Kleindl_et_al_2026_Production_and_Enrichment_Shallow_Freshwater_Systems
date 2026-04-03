@@ -1,4 +1,4 @@
-# Beyond phytoplankton and phosphorus: assessing trophic state in freshwater benthic ecosystems
+# Beyond phytoplankton and phosphorus: assessing trophic state in shallow freshwater ecosystems
 
 
 ## Abstract
@@ -52,4 +52,4 @@ Department of Biological Sciences, Institute of Environment, Florida Internation
 
 ## Acknowledgments
 
-  We would like to thank the Gaiser Laboratory Information Manager, Gabriel Kamener, for his assistance with metadata development and data publication. This project was supported by the South Florida-Caribbean Cooperative Ecosystems Studies Unit (SFC CESU) funded through the U.S. Department of Interior under Cooperative Agreement number 21AC12003 and by the Cristina Menendez Fellowship from Florida International University and funded through the Miccosukee Tribe of Indians of Florida. The associated paper was developed in collaboration with the Florida Coastal Everglades Long-Term Ecological Research (FCE LTER) program funded through the National Science Foundation under Cooperative Agreement number DEB-2025954. The authors declare no conflict of interest. 
+  We would like to thank the Gaiser Laboratory Information Manager, Gabriel Kamener, for his assistance with metadata development and data publication. This project was supported by the South Florida-Caribbean Cooperative Ecosystems Studies Unit (SFC CESU) funded through the U.S. Department of Interior under Cooperative Agreement number 21AC12003 and by the Cristina Menendez Fellowship from Florida International University and funded through the Miccosukee Tribe of Indians of Florida. The associated paper was developed in collaboration with the Florida Coastal Everglades Long-Term Ecological Research (FCE LTER) program funded through the National Science Foundation under Cooperative Agreement number DEB-2025954. The authors declare no conflict of interest. Shapefiles used to create map of South Florida were a part of the GitHub respoitory maps_FCE_sites_grayscale_base at https://github.com/FCE-LTER/maps_FCE_sites_grayscale_base.git.
