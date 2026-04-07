@@ -2418,9 +2418,9 @@ ever_utm <- st_as_sf(ever, coords = c("easting", "northing"),
 st_crs(ever_utm)
 
 #Read in geospatial files
-enp <- st_read(dsn = "shapefiles/FCE1294_ENP_Shapefile")
+enp <- st_read(dsn = "shapefiles/FCE1274_ENP_Shapefile")
 
-fl_no_turkey <- st_read(dsn = "shapefiles/FCE1294_FL_Shapefile")
+fl <- st_read(dsn = "shapefiles/FCE1274_FL_Shapefile")
 
 srs <- st_read(dsn = "shapefiles/FCE1294_SRS_Shapefile")
 
@@ -2442,7 +2442,7 @@ map_output <- ggplot() +
   geom_sf(data = enp, size = 0.01, fill = "gray80") + 
   geom_sf(data = srs, size = 0.01, fill = "lightskyblue3") + 
   geom_sf(data = ts, size = 0.01, fill = "lightskyblue1") + 
-  geom_sf(data = fl_no_turkey, size = 0.005, color = "black", fill = NA) + 
+  geom_sf(data = fl, size = 0.005, color = "black", fill = NA) + 
   geom_point(data = ever_utm, aes(x = easting, y = northing,
                                   shape = factor(ever_utm$shape)),
              size = 3, color = "black") +
