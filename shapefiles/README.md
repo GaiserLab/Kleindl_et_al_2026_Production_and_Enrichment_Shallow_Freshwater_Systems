@@ -1,6 +1,6 @@
 # Kleindl_et_al_2026_Production_and_Enrichment_Shallow_Freshwater_Systems/shapefiles
 
-Shapefiles included in analysis
+Shapefiles included in analysis to create map of Shark River Slough (SRS) and Taylor Slough (TS) in Everglades National Park (ENP) located in south Florida (FL).
 
 ## FCE1294_FL_Shapefile and FCE1294_ENP_Shapefile
 
