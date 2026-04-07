@@ -22,4 +22,4 @@ A shape file of the Shark River Slough boundary created by Micheal Rugge in 2001
 FCE1294_TS_Shapefile
 A shape file of the Taylor Slough boundary created by Micheal Rugge in 2001 via outlining the slough in a Landsat image. 
 
-Shape files were dowloaded from the GitHub respository 
+Shape files were dowloaded from the GitHub respository maps_FCE_sites_grayscale_base at https://github.com/FCE-LTER/maps_FCE_sites_grayscale_base.git
