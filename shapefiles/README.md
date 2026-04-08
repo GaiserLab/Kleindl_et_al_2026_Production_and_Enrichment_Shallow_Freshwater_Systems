@@ -1,6 +1,6 @@
 # Kleindl_et_al_2026_Production_and_Enrichment_Shallow_Freshwater_Systems/shapefiles
 
-Shapefiles included in analysis
+Shapefiles included in analysis to create a map of Shark River Slough (SRS) and Taylor Slough (TS) in Everglades National Park (ENP) located in south Florida (FL), USA.
 
 ## FCE1294_FL_Shapefile and FCE1294_ENP_Shapefile
 
@@ -19,10 +19,10 @@ Download at https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-fc
 
 FCE1294_SRS_Shapefile
 
-A shape file of the Shark River Slough boundary created by Mike Rugge in 2001 via outlining the slough in a Landsat image. 
+A shape file folder of the Shark River Slough boundary within the Everglades, which was created by Mike Rugge in 2001 by outlining the slough in a Landsat image.
 
 FCE1294_TS_Shapefile
 
-A shape file of the Taylor Slough boundary created by Mike Rugge in 2001 via outlining the slough in a Landsat image. 
+A shape file folder of the Taylor Slough boundary within the Everglades, which was created by Mike Rugge in 2001 by outlining the slough in a Landsat image.
 
-Shape files were dowloaded from the GitHub respository maps_FCE_sites_grayscale_base at https://github.com/FCE-LTER/maps_FCE_sites_grayscale_base.git
+Shape file folders were downloaded from the GitHub repository maps_FCE_sites_grayscale_base at https://github.com/FCE-LTER/maps_FCE_sites_grayscale_base.git
