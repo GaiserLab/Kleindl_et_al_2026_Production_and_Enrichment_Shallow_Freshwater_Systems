@@ -1,7 +1,7 @@
 #R-Code for Data Package:
 #FCE1294_Kleindl_LiteratureReview
 #Script by: Paige Kleindl
-#12-2-2025
+#04-09-2026
 
 #R version 4.1.1
 
@@ -2458,8 +2458,7 @@ map_output <- ggplot() +
     nudge_y = labels_ever$nudge_y,
     segment.color = NA) +
   coord_sf(xlim = c(449000, 595270), ylim = c(2747000, 2860000), expand = FALSE) +
-  labs(shape = "Everglades
-Wetland Basins",
+  labs(shape = "Wetland Habitat",
        x = "Longitude",
        y = "Latitude") +
   theme_bw() +
