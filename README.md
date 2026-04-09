@@ -1,5 +1,6 @@
 # Beyond phytoplankton and phosphorus: assessing trophic state in shallow freshwater ecosystems
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19489048.svg)](https://doi.org/10.5281/zenodo.19489048)
 
 ## Folders
 __data__ - Contains raw data files used in R code.
