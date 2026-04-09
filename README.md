@@ -9,10 +9,10 @@ __shapefiles__ - Contains shape files used to create map.
 
 ## Workflow
 ### Open R Project in R Studio
-- __Production-and-Enrichment-Shallow-Lentic-Systems.Rproj__
+- Production-and-Enrichment-Shallow-Lentic-Systems.Rproj
 
 ### Open and run R script in R Project, which will load the nessesary data and shape files.
- - __FCE1294_R_Code.R__  
+ - FCE1294_R_Code.R
 
 
 ## Project Abstract
