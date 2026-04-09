@@ -13,5 +13,5 @@ __FCE1294_Ever_Case_Study.csv__
  - This csv file includes water depth, benthic microbial dry mass, ash-free-dry mass, chlorophyll-a, TP and TN concentration and standing stock, total macrophyte dry mass and TP and TN concentration and standing stock, Cladium jamaicense dry mass and TP and TN concentration and standing stock, Eleocharis cellulosa dry mass and TP and TN concentration and standing stock, and total producer biomass and TP and TN concentration and standing stock found within each plot replicate sampled in ridge and slough habitats found at three Shark River Slough and three Taylor Slough/Panhandle wetland sites in Everglades National Park, FL, USA. Data collection spanned 2021-06-14 to 2023-06-27, and each plot was sampled once.
 
 
-Data citation: 
+__Data citation:__ 
 Kleindl, P.M., C. Candelario, J. Sah, M. Ross, and E.E. Gaiser. 2026. Primary producer biomass and nutrient stocks in phosphorus-limited shallow freshwater ecosystems: literature review data from 1921 - 2024 and Everglades FL, USA case study, June 2021 - June 2023 ver 2. Environmental Data Initiative. https://doi.org/10.6073/pasta/70a9dc1f9c0d55102d6eebde4a9a0a2c (Accessed 2026-04-09).
