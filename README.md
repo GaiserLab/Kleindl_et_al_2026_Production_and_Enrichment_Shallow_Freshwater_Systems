@@ -1,4 +1,4 @@
-# Beyond phytoplankton and phosphorus: assessing trophic state in shallow freshwater ecosystems
+# Hidden in the benthos: why water-column phosphorus fails enrichment assessments in shallow freshwaters
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19489048.svg)](https://doi.org/10.5281/zenodo.19489048)
 
