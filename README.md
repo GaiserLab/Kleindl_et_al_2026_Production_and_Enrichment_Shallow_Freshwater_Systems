@@ -2,6 +2,8 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19489048.svg)](https://doi.org/10.5281/zenodo.19489048)
 
+Data and metadata for this project are published through the Environmental Data Initiative (EDI) Data Portal: https://doi.org/10.6073/pasta/869c1dab45acb9393815d7d0a58df708
+
 ## Folders
 __data__ - Contains raw data files used in R code.
 
