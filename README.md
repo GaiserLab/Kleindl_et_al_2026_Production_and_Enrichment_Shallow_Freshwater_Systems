@@ -1,6 +1,6 @@
 # Hidden in the benthos: why water-column phosphorus fails enrichment assessments in shallow freshwaters
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19489048.svg)](https://doi.org/10.5281/zenodo.19489048)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19743686.svg)](https://doi.org/10.5281/zenodo.19743686)
 
 Data and metadata for this project are published through the Environmental Data Initiative (EDI) Data Portal: https://doi.org/10.6073/pasta/869c1dab45acb9393815d7d0a58df708
 
