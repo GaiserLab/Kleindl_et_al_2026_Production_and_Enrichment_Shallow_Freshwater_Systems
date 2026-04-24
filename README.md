@@ -49,24 +49,25 @@ Department of Biological Sciences, Institute of Environment, Florida Internation
   
 ## Manuscript Highlights
 
-- Water-column phosphorus is not a reliable indicator of chlorophyll-a production in p-limited freshwater benthic ecosystems.
-- Instead, benthic producer phosphorus standing stock forms a predicable positive relationship with benthic chlorophyll-a. 
-- This relationship can be used to develop a trophic status classification system for shallow lentic systems like wetlands.
+- Water-column total phosphorus (TP) is not a reliable indicator of benthic chlorophyll-a production in P-limited shallow freshwater ecosystems.
+- Instead, benthic producer phosphorus standing stock forms a predicable positive relationship with benthic algal chlorophyll-a and macrophyte biomass. 
+- This benthic biomass-TP standing stock relationship can be used to develop a trophic status classification system for shallow lentic ecosystems like wetlands.
   
 
 ## Keywords
 
 - Algae
-- Alternative stable state
+- Alternative Stable State
+- Eutrophication
 - Everglades
-- Freshwater
 - Literature Review
 - Macrophyte
 - Microbial Mat
 - Phosphorus
 - Phytoplankton
-- Trophic status  
+- Shallow Freshwater Ecosystems
+- Trophic Status  
 
 ## Acknowledgments
 
-  We would like to thank the Gaiser Laboratory Information Manager, Gabriel Kamener, for his assistance with metadata development and data publication. This project was supported by the South Florida-Caribbean Cooperative Ecosystems Studies Unit (SFC CESU) funded through the National Park Service under Cooperative Agreement number 21AC12003 and by the Cristina Menendez Fellowship from Florida International University and funded through the Miccosukee Tribe of Indians of Florida. The Cape Sable Seaside Sparrow project was supported through Cooperative Agreement number 5284-AP00-371 between the National Park Service and Florida International University, through MIPR W32CS540149930 between the United States Army Corps of Engineers and the National Park Service, and through H529702A066 and H5000-06-0104 between the National Park Service and Florida International University. The associated paper was developed in collaboration with the Florida Coastal Everglades Long-Term Ecological Research (FCE LTER) program funded through the National Science Foundation under Cooperative Agreement number DEB-2025954. Field work for the Everglades case study was conducted under the United States National Park Service permits EVER-2019-SCI-0055 and EVER-2023-SCI-0011, and field work for the second Everglades dataset was conducted under the United States National Park Service permit EVER-2004-SCI-0012. The authors declare no conflict of interest.
+  We would like to thank the Gaiser Laboratory Information Manager, Gabriel Kamener, for his assistance with R-code, metadata development and data publication. This project was supported by the South Florida-Caribbean Cooperative Ecosystems Studies Unit (SFC CESU) funded through the National Park Service under Cooperative Agreement number 21AC12003 and by the Cristina Menendez Fellowship from Florida International University and funded through the Miccosukee Tribe of Indians of Florida. The Cape Sable Seaside Sparrow project was supported through Cooperative Agreement number 5284-AP00-371 between the National Park Service and Florida International University, through MIPR W32CS540149930 between the United States Army Corps of Engineers and the National Park Service, and through H529702A066 and H5000-06-0104 between the National Park Service and Florida International University. The associated paper was developed in collaboration with the Florida Coastal Everglades Long-Term Ecological Research (FCE LTER) program funded through the National Science Foundation under Cooperative Agreement number DEB-2025954. Field work for the Everglades case study was conducted under the United States National Park Service permits EVER-2019-SCI-0055 and EVER-2023-SCI-0011, and field work for the second Everglades dataset was conducted under the United States National Park Service permit EVER-2004-SCI-0012. The authors declare no conflict of interest.
