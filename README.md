@@ -50,8 +50,8 @@ Department of Biological Sciences, Institute of Environment, Florida Internation
 ## Manuscript Highlights
 
 - Water-column total phosphorus (TP) is not a reliable indicator of benthic chlorophyll-a production in P-limited shallow freshwater ecosystems.
-- Instead, benthic producer phosphorus standing stock forms a predicable positive relationship with benthic algal chlorophyll-a and macrophyte biomass. 
-- This benthic biomass-TP standing stock relationship can be used to develop a trophic status classification system for shallow lentic ecosystems like wetlands.
+- Instead, benthic algal and macrophyte TP standing stock form predictable positive relationships with benthic algal chlorophyll-a and macrophyte biomass, respectively. 
+- These benthic biomass-TP standing stock relationships can be used to develop a trophic status classification system for shallow lentic ecosystems like wetlands.
   
 
 ## Keywords
